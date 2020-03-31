@@ -1,0 +1,38 @@
+<div class="postTitle">
+
+  タイトル：<%= @post.name %>
+</div>
+<% if user_signed_in? && current_user.id == @post.user_id %>　
+<%# ①ログインしてます？　　②ログインしているユーザー　と　投稿したユーザーが一致してます？ それなら編集・削除して良いですよ %>
+  <div class="postManage">
+    <%= link_to "編集", edit_post_path(@post.id), class: "postManage__edit" %>
+    <%= link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete" %>
+    <%# <%= link_to "1つ戻る",'Create', 'posts_path'なぜかトップに行っちゃう %>
+  </div>
+<% end %>
+投稿時間<div class="postDate">
+  <%= @post.created_at %>
+</div>
+<div class="postAuthor">
+</div>
+
+
+年齢:<div class="postDate">
+  <%= @post.age %>歳
+</div>
+期間:<div class="postDate">
+  <%= @post.content %>
+</div>
+アレルギー・喘息：<div class="postDate">
+  <%= @post.allergy %>
+</div>
+ 現在服用中のお薬：<div class="postDate">
+ 　<%= @post.kusuri %>
+</div>
+
+
+
+<div class="postText">
+　　<%= @post.title %>
+</div>
+  <div class="header-link">あなたにお勧めのお薬はこちら→ <a href="https://www.daiichisankyo-hc.co.jp/products/details/lulu_attack_ex/">クリック！</a></div>

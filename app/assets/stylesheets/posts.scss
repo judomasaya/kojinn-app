@@ -1,0 +1,481 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post{
+  border: 1px solid;
+  width: 40%;
+  margin-top: 30px;
+}
+
+.post-date{
+  color: gray;
+}
+
+
+
+
+
+.wrapper {
+  height: 500px;
+  width: 100%;
+}
+
+/* ヘッダー */
+
+header {
+  background-color:black;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  // color: white;
+  /* font:color red; */
+}
+
+
+/* font-size: 30px; */
+/* font-weight: bold; */
+/* font-family: fantasy;
+color: red; */
+
+
+
+a {
+  text-decoration: none;
+  color:white;
+  font-size: 20px;
+  border-radius: 27px;
+  background-color:red;
+  padding: 10px;
+
+
+
+  // background-color: skyblue;
+  cursor: pointer;
+}
+
+.header-links {
+  list-style: none;
+  display: flex;
+  
+}
+
+// ヘッダーが面白くなる
+// .header-links {
+//   list-style: none;
+//   // display: flex;
+//   display: inline-block;
+//   width: 240px;
+//   padding: 10px 0;
+//   // text-align: center;
+//   font-size: 20px;
+//   color: #fff;
+//   text-decoration: none;
+//   background-color: black;
+//   margin-top: 200px;
+//   border-radius: 27px;
+// }
+
+.header-link {
+  margin-left: 30px;
+  cursor: pointer;
+  /* color: red; */
+
+}
+
+  
+
+  
+  /* font-family:fantasy */
+
+/* ファーストビュー */
+
+.fv-section {
+  height: 600px;
+  background-image: url(kusuri3.jpeg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-copy {
+  font-size: 100px;
+  color:black ;
+}
+
+.fv-text {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.cta-btn {
+  display: inline-block;
+  width: 240px;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 40px;
+  color: #fff;
+  text-decoration: none;
+  background-color:red;
+  margin-top: 40px;
+  border-radius: 60px;
+}
+
+.cta-btn:hover {
+  box-shadow: 0 0 60px yellow;
+}
+.a:hover {
+  box-shadow: 0 0 60px yellow;
+}
+
+.card-section {
+  /* width: 100%; */
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+.card-section-title {
+//   font-size: 24px;
+//   text-align: center;
+//   margin-bottom: 40px;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+    height: 60px;
+    line-height: 60px;
+    background: coral;
+}
+
+.card-list {
+  // display: flex;
+  justify-content: space-between;
+}
+
+
+.card-item {
+  /* width: 320px; */
+  border: 1px solid #152a5c;
+  margin: 60px;
+}
+
+
+.card-img h3 {
+  /* position: absolute; */
+  bottom: 15px;
+  left: 25px;
+  font-size: 30px;
+}
+
+.card-text {
+  padding: 15px 25px;
+}
+
+footer {
+  line-height: 80px;
+  text-align: center;
+  background-color:mediumorchid;
+  color: #fff;
+}
+
+b {
+  color:black;
+  // font-family: fantasy;
+}
+
+
+form {
+  // background-color: yellow;
+  // text-align: center;
+  // height: 60px;
+  /* padding-top: 60px; */
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  /* display: flex; */
+  /* padding-right: 30px; */
+  color: black;
+}
+
+form {
+  width: 100%;
+}
+
+.kusuri-image {
+  height: 450px;
+  width: 500px;
+}
+
+.yakuzaishi {
+  display: flex;
+}
+
+
+h5 {
+text-align: center;
+font-size: 60px;
+background-color: yellow;
+}
+
+
+label {
+  padding: 80 0 0 0px;
+}
+
+
+h1{
+  color:white;
+  // background-color: seagreen;
+  font-size: 60px;
+}
+h2{
+  color:white;
+  background-color: black;
+}
+h3{
+  color:white;
+  background-color: black;
+  text-align: center;
+}
+
+
+
+link {
+  cursor: pointer;
+  // background-color: royalblue;
+  // color:red;
+  // font-size: 80px;
+}
+
+
+
+input, textarea {
+  font-size: 30px;
+  text-align: center;
+  height: 100px;
+  // width: 700px;
+}
+
+select {
+  font-size: 30px;
+  color: blue;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header__right--btn:hover {
+  box-shadow: 0 0 60px yellow;
+}
+.header-link:hover {
+  box-shadow: 0 0 60px yellow;
+}
+.content__right__bottom--userName--btn:hover {
+  box-shadow: 0 0 60px yellow;
+}
+.content__right__top--title:hover {
+  box-shadow: 0 0 60px yellow;
+}
+.header__title--text:hover {
+  box-shadow: 0 0 60px yellow;
+}
+
+
+
+
+
+body{
+  background-color: #f6f6f6;
+  min-width: 650px;
+  .header{
+    height: 56px;
+    width: 100%;
+    padding: 0 150px;
+    background-color:black;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    &__title{
+      font-size: 30px;
+      line-height: 56px;
+      &--text{
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+    &__right{
+      padding: inherit;
+      &--btn{
+        text-decoration: none;
+        line-height: 56px;
+        color: #fff;
+        margin-left:15px;
+      }
+    }
+  }
+  .contents{
+    margin: 30px auto 0;
+    background-color: #fff;
+    height: 100%;
+    width: 70%;
+    // overflow: scroll;
+    .content{
+      padding: 60px;
+      border-bottom: 1px solid #f6f6f6;
+      display: flex;
+      &__left{
+        padding-right: 20px;
+        &--image{
+          height: 55px;
+          width: 55px;
+          border: solid 1px;
+        }
+      }
+      &__right{
+        width: calc(100%-100px);
+        &__top{
+          font-size: 20px;
+          font-weight: bold;
+          &--title{
+            text-decoration: none;
+            color:white;
+          }
+        }
+        &__bottom{
+          font-size: 15px;
+          color: #999;
+          display: flex;
+          &--userName{
+            &--btn{
+              text-decoration: none;
+              color: white;
+            }
+          }
+          &--date{
+            margin-left: 20px;
+          }
+        }
+      }
+      &__title{
+        font-size: 30px;
+        font-weight: bold;
+        padding-top: 30px;
+        text-align: center;
+      }
+    }
+    .postTitle{
+      padding-top: 20px;
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      color:red;
+      background-color: black;
+    
+    }
+    .postDate{
+      font-size: 25px;
+      color: #999;
+      text-align: left;
+      // border: 1px solid #152a5c;
+      padding: 10px;
+    }
+    .postAuthor{
+      font-size: 30px;
+      // color: #999;
+      text-align: center;
+    }
+    .postManage{
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      &__edit{
+        display: block;
+        border-radius: 5px;
+        color: #ffffff;
+        background-color:blue;
+        padding: 0 10px;
+        text-decoration: none;
+        margin-right: 10px;
+        font-size: 40px;
+      }
+      &__delete{
+        display: block;
+        border-radius: 5px;
+        color: #ffffff;
+        background-color:blue;
+        padding: 0 10px;
+        text-decoration: none;
+        margin-left: 10px;
+        font-size: 40px;
+      }
+    }
+    .postText{
+      margin: 20px 30px;
+      font-size: 30px;
+    }
+
+  }
+  .form{
+    width: 85%;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 30px;
+    &__title{
+      display: block;
+      width: 100%;
+      height: 50px;
+      margin-top: 15px;
+    }
+    &__text{
+      display: block;
+      width: 100%;
+      height: 50%;
+      margin-top: 15px;
+    }
+    &__age{
+      display: block;
+      width: 100%;
+      height: 50%;
+      margin-top: 15px;
+    }
+    &__name{
+      display: block;
+      width: 100%;
+      height: 50%;
+      margin-top: 15px;
+    }
+    &__btn{
+      display: block;
+      width: 30%;
+      margin: 15px auto 0;
+      height: 1000px;
+    }
+  }
+  .user{
+    padding: 15px 30px;
+  }
+}
+
+
+
+
+

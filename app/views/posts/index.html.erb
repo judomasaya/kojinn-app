@@ -1,0 +1,209 @@
+<%# <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>サイト</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body> %>
+
+
+
+<%# コントローラーの@post = Post.find(1)  # 1番目のレコードを@postに代入しviewへ写しここにきた %>
+<%# @postのインスタンス変数は外す。each文でpostに小分けにしているから！ %>
+  <%# <h1>トップページ</h1> %>
+  <%# <% @posts.each do |post| %> 
+    <%# <%= post.content %> 
+    <%# <%= post.created_at %> 
+<%# <% end %> 
+<%# ↓ %>
+
+
+
+
+  <div class="wrapper">
+
+    <%# <header>
+      <h1><a href="/posts">お薬自動判別AI</a></h1>
+      <nav>
+        <ul class="header-links">
+          <li class="header-link"><a href="https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/0000180831.pdf">世界一分かりやすいお薬の知識</a></li>
+          <li class="header-link"><a href="https://www.kusurinomadoguchi.com/near">処方箋薬局サーチ機能</a></li>
+          <li class="header-link"><a href="https://pharmacy-search.jp/">近隣ドラッグストアサーチ機能</a></li>
+        </ul>
+      </nav>
+    </header> %>
+    <main>
+      <section class="fv-section">
+        <p class="main-copy"><b>風邪薬はAIが選ぶ</b>
+        </p>
+        <p class="fv-text">〜お客様の症状別に合わせてお薬を自動判別〜</p>
+        <%# <%= link_to '新規投稿　お薬自動AI機能に遷移', '/posts/new' 　　　　posts/newページに飛べる %> 
+        <a href="/posts/new" class="cta-btn">使ってみる</a>
+      </section>
+      <section class="card-section">
+        <h2 class="card-section-title">大手有名ドラッグストアから感謝の声が続々と！</h2>
+        <ul class="card-list">
+          <li class="card-item">
+            <div class="card-img">
+              <h3>株式会社 gaga 　　　　　　　社長　松本清</h3>
+              <img src="assets/kusuri2.jpeg" alt="クライアントの画像1" class="kusuri-image">
+              <img src="assets/kusuri2.jpeg" alt="クライアントの画像1" class="kusuri-image">
+            </div>
+            <p class="card-text">プロトタイピングを推進する強力なツール。チーム内での認識共有のレベルが上がった。</p>
+          </li>
+          <li class="card-item">
+            <div class="card-img">
+              <h3>株式会社 Beatles　　　　　　　　社長　小浜</h3>
+              <img src="assets/kusuri2.jpeg" alt="クライアントの画像2" class="kusuri-image">
+              <img src="assets/kusuri2.jpeg" alt="クライアントの画像2" class="kusuri-image">
+            </div>
+            <p class="card-text">事前にユーザーの反応が知ることができるため、サービス完成後の手戻りがなくなった。</p>
+          </li>
+          <li class="card-item">
+            <div class="card-img">
+              <h3>株式会社 LEMON　　　　　　　　社長　田中</h3>
+              <img src="assets/kusuri2.jpeg" alt="クライアントの画像3" class="kusuri-image">
+              <img src="assets/kusuri2.jpeg" alt="クライアントの画像3" class="kusuri-image">
+            </div>
+            <p class="card-text">プロトタイプを作成することによって、クライアントへのプレゼンに説得力が増した。</p>
+          </li>
+        </ul>
+      </section>
+      <h4>薬剤師紹介</h4>
+        <div class="yakuzaishi">
+          <ul>
+            <li>
+              <img src="assets/yakuzaishi1.jpeg" alt="staff1" class="stylist-image" >
+              <h4 class="stylist-name">鈴木</h4>
+            </li>
+            <li>
+              <img src="assets/yakuzaishi2.jpeg" alt="staff2" class="stylist-image">
+              <h4 class="stylist-name">佐藤</h4>
+            </li>
+            <li>
+              <img src="assets/yakuzaishii3.jpeg" alt="staff2" class="stylist-image">
+              <h4 class="stylist-name">田中</h4>
+            </li>
+          </ul>
+        </div>
+        <%# <h5>お薬相談窓口</h5>
+        <form> %>
+<%#           
+        <input type="text" placeholder="名前を入力してください"><br>
+        <textarea placeholder="予約日時やご要望をお書きください"></textarea><br>
+        <label>
+          <input type="radio" name="RadioGroup1" value="0">男性
+        </label><br>
+        <label>
+          <input type="radio" name="RadioGroup1" value="1">女性
+        </label><br>
+        現在どの症状が一番辛いですか？
+        <select>
+          <option value="0">熱</option>
+          <option value="1">喉</option>
+          <option value="2">鼻</option>
+          <option value="3">咳</option>
+        </select>
+        <div class="questionaire">
+          その他にも辛い症状はありますか？<br>
+          <label>
+            <input type="checkbox" name="Checkbox" value="0">
+            熱
+          </label><br>
+          <label>
+            <input type="checkbox" name="Checkbox" value="1">
+            喉
+          </label><br>            
+          <label>
+            <input type="checkbox" name="Checkbox" value="1">
+            鼻
+          </label><br>            
+          <label>
+            <input type="checkbox" name="Checkbox" value="1">
+            咳
+          </label><br>
+          いつから症状は出ていますか？
+        <select>
+          <option value="0">今週</option>
+          <option value="1">先週</option>
+          <option value="2">一ヶ月前</option>
+          <option value="3">それ以上</option>
+        </select>
+        <div class="questionaire"><%#⬅︎これで改行できる%>
+          <%# アレルギーをお持ちですか？<br>
+          <label>
+          <input type="checkbox" name="Checkbox" value="0">
+            持っていない
+          </label><br>
+          <label>
+            <input type="checkbox" name="Checkbox" value="1">
+            
+          </label><br>
+          <label>
+            <input type="checkbox" name="Checkbox" value="1">
+            喘息がある
+          </label><br>
+          <label>
+            <input type="checkbox" name="Checkbox" value="1">
+            アレルギーも喘息もある
+          </label><br>
+          <textarea placeholder="宜しければ入力をお願い致します"></textarea><br>
+        <label>
+
+
+          担当のご希望をお願いします
+          <select>
+            <option value="0">鈴木</option>
+            <option value="1">佐藤</option>
+            <option value="2">田中</option>
+            <option value="3">全員やだ</option>
+          </select>
+        </div>
+        <input type="submit" value="予約メールを送る">
+      </form> %> 
+    <%# </main>
+<h1>投稿履歴</h1> %>
+
+<%# <%= link_to '新規投稿　お薬自動AI機能に遷移', '/posts/new' %>　　　
+
+<%# @posts.each do |post| %>
+  <%# <div class="post">
+    <div class="post-date">
+      投稿日時：<%#= post.created_at %>
+    <%# </div> %>
+    <%# <div class="post-content"> %>
+      <%#= post.content %>
+    <%# </div> %>
+  <%# </div> %>
+<%# end %>
+<%# 
+<% @posts.each do |post| %>
+  <%# <div class="content">
+    <div class="content__left">
+      <div class="content__left--image"></div>
+    </div>
+    <div class="content__right">
+      <div class="content__right__top">
+        <%= post.title %>
+      <%# </div>
+      <div class="content__right__bottom">
+        <div class="content__right__bottom--date">
+          <%= post.created_at %>
+        <%# </div>
+      </div>
+    </div>
+  </div> 
+<% end %>  
+
+
+
+    <footer>
+      <small>kojinn2 all rights reserved</small>
+    </footer>
+  </div>
+<%# </body>
+</html> %>

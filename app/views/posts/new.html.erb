@@ -1,0 +1,95 @@
+    <%# <header>
+      <h1><a href="/posts">お薬自動判別AI</a></h1>
+      <nav>
+        <ul class="header-links">
+          <li class="header-link"><a href="https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/0000180831.pdf">世界一分かりやすいお薬の知識</a></li>
+          <li class="header-link"><a href="https://www.kusurinomadoguchi.com/near">処方箋薬局サーチ</a></li>
+          <li class="header-link"><a href="https://pharmacy-search.jp/">近隣ドラッグストアサーチ</a></li>
+        </ul>
+      </nav>
+    </header> %>
+
+<h1>お薬自動AI機能へようこそ</h1>
+
+<%= link_to '1つ戻る', '/posts' %>
+
+
+
+<p>詳細に記入することで、お客様の症状に合う「最適なお薬」を自動的に選択します</p>
+
+<h2>名前</h2>
+    <%# <div class="name">　 %>
+  <input type="text" placeholder="名前を入力してください"><br>
+
+    <h2>年齢</h2>
+    <input id="js-point_form-0" name="expert_exam_response[items_attributes][0][score]" type="number" value="0">
+    歳
+  <%# <select>
+    <option value="0">０〜３歳</option>
+    <option value="1">４〜６歳</option>
+    <option value="2">７〜１４歳</option>
+    <option value="3">１５歳以上</option>
+  </select> %>
+    <h2>症状はいつ頃からですか？</h2>
+  <select>
+    <option value="0">3日以内</option>
+    <option value="1">１週間前</option>
+    <option value="2">それ以上</option>
+    <option value="3">分からない</option>
+  </select>
+    <h2>１番辛い症状</h2>
+  <select>
+    <option value="0">熱</option>
+  <div class="questionaire">　　　<%#クラスを作成すると、改行される%>
+    <option value="1">喉</option>
+    <option value="2">鼻</option>
+    <option value="3">咳</option>
+  </select>
+  <div class="questionaire">　　　<%#クラスを作成すると、改行される%>
+    <h2>２番目に辛いのはありますか？</h2>
+  <select>
+    <option value="0">熱</option>
+    <option value="1">喉</option>
+    <option value="2">鼻</option>
+    <option value="3">咳</option>
+    <option value="４">なし</option>
+  </select>
+  
+    
+  <div class="arerugii">　　
+  <h2>アレルギーをお持ちの方はご記入ください</h2>　
+  <textarea placeholder="例：卵アレルギー"></textarea><br>
+  <div class="arerugii">　　
+  <h2>その他</h2>　
+  <textarea placeholder="他にお困りの事がありましたらこちらへ"></textarea><br>
+
+
+
+
+<%= form_tag('/posts', method: :post) do %>   <%#postは情報の登録HTTPメソッド、postsに飛べる（なんでpostsは2つあるんだ？）%>
+  <%# <input type="text" name="content">           name=contentはコンテンツカラムに入るデータだよってこと。ここに入力したデータはdef createへ飛ぶ %>
+  <input type="submit" value="送信">
+<% end %>
+
+
+<%= form_with model: @post, class: :form, local: true do |form| %>
+    <div class="arerugii">　　
+  <h2>今の症状を一言で</h2>　
+  <%= form.text_area :name, placeholder: :例：コロナなのか、、、, class: :form__name %>
+    <div class="arerugii">　　
+  <h2>年齢を教えてください</h2>　
+  <%= form.text_area :age, placeholder: :例：１００, class: :form__age %>
+      <div class="arerugii">　　
+  <h2>いつ頃から発症をしたか教えてください</h2>　
+  <%= form.text_area :content, placeholder: :例：１週間前から, class: :form__text %>
+      <div class="arerugii">　　
+  <h2>具体的な状態を教えてください</h2>　
+  <%= form.text_area :title, placeholder: :例：熱が特にひどく、喉も痛いです。私はコロナなのでしょうか？, class: :form__title %>
+  <h2>アレルギー・喘息などの有無を教えてください</h2>　
+  <%= form.text_area :allergy, placeholder: :例：牛乳アレルギーがあります。喘息はありません。, class: :form__title %>
+  <h2>今、何か飲まれているお薬があれば教えてください</h2>　
+  <%= form.text_area :allergy, placeholder: :例：ロキソニン・ガスターテン・ビオフェルミン, class: :form__title %>
+
+  <%= form.submit '投稿する', class: :form__btn %>
+<% end %>
+

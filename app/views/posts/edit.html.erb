@@ -1,0 +1,19 @@
+
+<div class="content__title">
+  投稿の編集
+<%= link_to '1つ戻る', '/post' %>
+
+</div>
+
+
+
+
+<%= form_with model: @post, class: :form, local: true do |form| %>
+
+  <%= form.text_area :name, placeholder: :名前, class: :form__name %>
+  <%= form.text_area :age, placeholder: :年齢, class: :form__age %>
+  <%= form.text_area :content, placeholder: :いつ頃からですか, class: :form__text %>
+  <%= form.text_area :title, placeholder: :どのような症状ですか, class: :form__title %>
+
+  <%= form.submit '投稿する', class: :form__btn %>
+<% end %>
