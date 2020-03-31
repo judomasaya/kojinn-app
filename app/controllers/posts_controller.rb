@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   
  
   def create
-    # binding.pry
+    binding.pry
     # Post.create() #ActiveRecordのメソッドの一種 ()には、実際にPostテーブルに登録したいデータを記載します。
     # Post.create(content: params[:content]) #左側がカラム名（contentカラム）、右側がparamsとして送られて来たデータを表現　ただこれは正しい表記ではないので下に記載
     Post.create(post_params) #post_paramsってなんやねん　下へ
