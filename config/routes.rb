@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   
   devise_for :users
   devise_for :installs
-  root to: 'posts#index'
+  root to: 'posts#index'#これでindex画面に飛ばす
   resources :posts, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resources :users, only: :show #usersコントローラーを作成　詳細見るやーつrails g controller users 忘れずに
 end
