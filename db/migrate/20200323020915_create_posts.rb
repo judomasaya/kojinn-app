@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.text :content
       t.text :allergy
       t.text :kusuri
+      t.text :image
       t.timestamps
     end
   end

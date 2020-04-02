@@ -88,7 +88,9 @@
   <h2>アレルギー・喘息などの有無を教えてください</h2>　
   <%= form.text_area :allergy, placeholder: :例：牛乳アレルギーがあります。喘息はありません。, class: :form__title %>
   <h2>今、何か飲まれているお薬があれば教えてください</h2>　
-  <%= form.text_area :allergy, placeholder: :例：ロキソニン・ガスターテン・ビオフェルミン, class: :form__title %>
+  <%= form.text_area :kusuri, placeholder: :例：ロキソニン・ガスターテン・ビオフェルミン, class: :form__title %>
+  <h2>画像</h2>　
+  <%= form.text_area :image, placeholder: :例：お薬手帳・症状の部位・ネットから似ている症状の写真の引用, class: :form__title %>
 
   <%= form.submit '投稿する', class: :form__btn %>
 <% end %>
