@@ -31,7 +31,7 @@
  
         <% if user_signed_in? %>
           ログイン名：<%= link_to current_user.nickname, user_path(current_user), class: "header__right--btn" %>の投稿一覧
-          <%= link_to "AIの実力を試してみる", new_post_path, class: "header__right--btn" %>
+          <%= link_to "新規投稿", new_post_path, class: "header__right--btn" %>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn" %>
         <% else %>
           <%= link_to "ログイン", new_user_session_path, class: "header__right--btn" %>
