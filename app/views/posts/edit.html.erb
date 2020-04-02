@@ -9,10 +9,10 @@
 
 <%= form_with model: @post, class: :form, local: true do |form| %>
 
-  名前<%= form.text_area :name, placeholder: :名前, class: :form__name %>
+  症状<%= form.text_area :name, placeholder: :名前, class: :form__name %>
   年齢<%= form.text_area :age, placeholder: :年齢, class: :form__age %>
   期間<%= form.text_area :content, placeholder: :いつ頃から, class: :form__text %>
-  症状<%= form.text_area :title, placeholder: :どのような症状, class: :form__title %>
+  詳細<%= form.text_area :title, placeholder: :どのような症状, class: :form__title %>
   持病<%= form.text_area :allergy, placeholder: :アレルギー・喘息の有無など, class: :form__title %>
   飲み合わせ<%= form.text_area :kusuri, placeholder: :今飲まれているお薬, class: :form__title %>
   画像<%= form.text_area :image, placeholder: :画像, class: :form__title %>

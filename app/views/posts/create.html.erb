@@ -17,11 +17,8 @@
 <h1>投稿が完了しました</h1>
 <%# <%= link_to 'トップページに戻る', '/posts' %> 
 <%= link_to '1つ戻る', '/posts/new' %>
-
-
 <h2>     タイトルをクリック　→　詳細へ！　　　　　　  名前をクリック　→　投稿一覧へ！</h2>
  
-
 <% @posts.each do |post| %>
   <div class="content">
     <div class="content__left">
@@ -40,13 +37,12 @@
         </div> 
         <div class="content__right__bottom--date">
           <%= post.created_at %>
-        
-
-          <%# <%= post.title %> 
+                  <%# <%= post.title %> 
         </div>
       </div>
     </div>
   </div>
 <% end %>
+<%= paginate(@posts) %>
 
 
