@@ -58,7 +58,7 @@ a {
 
 .header-links {
   list-style: none;
-  display: flex;
+  // display: flex;
   
 }
 
@@ -290,6 +290,7 @@ select {
 }
 a:hover {
   box-shadow: 0 0 60px yellow;
+  
 }
 .content__right__bottom--userName--btn:hover {
   box-shadow: 0 0 60px yellow;
@@ -317,6 +318,7 @@ body{
     &__title{
       font-size: 30px;
       line-height: 56px;
+      padding: 0 0 0 30px;
       &--text{
         text-decoration: none;
         color: #fff;
@@ -337,6 +339,7 @@ body{
     background-color: #fff;
     height: 100%;
     width: 70%;
+    padding: 0 0 100px 0;
     // overflow: scroll;
     .content{
       padding: 60px;
@@ -489,7 +492,9 @@ body{
 // }
 
 .postImage {
-  padding: 100px 10px 130px 10px;
+  padding: 300px ;
+  background-size: cover;
+  background-position: center center;
 }
 
 form input[type="submit"] {
@@ -500,3 +505,5 @@ form input[type="submit"] {
   font-size: 25px;
   height: 50px;
 }
+
+
