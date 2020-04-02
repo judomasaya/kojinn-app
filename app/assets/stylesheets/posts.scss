@@ -29,7 +29,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 60px;
+  // padding: 0 60px;
   // color: white;
   /* font:color red; */
 }
@@ -81,6 +81,8 @@ a {
 .header-link {
   margin-left: 30px;
   cursor: pointer;
+  padding: 30px;
+  display: contents;
   /* color: red; */
 
 }
@@ -234,7 +236,7 @@ label {
 
 
 h1{
-  color:white;
+  color:red;
   // background-color: seagreen;
   font-size: 60px;
 }
@@ -286,7 +288,7 @@ select {
 .header__right--btn:hover {
   box-shadow: 0 0 60px yellow;
 }
-.header-link:hover {
+a:hover {
   box-shadow: 0 0 60px yellow;
 }
 .content__right__bottom--userName--btn:hover {
@@ -308,8 +310,6 @@ body{
   min-width: 650px;
   .header{
     height: 56px;
-    width: 100%;
-    padding: 0 150px;
     background-color:black;
     color: #fff;
     display: flex;
@@ -342,6 +342,7 @@ body{
       padding: 60px;
       border-bottom: 1px solid #f6f6f6;
       display: flex;
+      border: solid;
       &__left{
         padding-right: 20px;
         &--image{
@@ -364,11 +365,15 @@ body{
           font-size: 15px;
           color: #999;
           display: flex;
+          margin: 40px;
           &--userName{
             &--btn{
               text-decoration: none;
               color: white;
             }
+          }
+          &--date{
+            margin-left: 20px;
           }
           &--date{
             margin-left: 20px;
@@ -479,3 +484,19 @@ body{
 
 
 
+// .content__right__bottom {
+//   padding: 220px 100px 0px 0px;
+// }
+
+.postImage {
+  padding: 100px 10px 130px 10px;
+}
+
+form input[type="submit"] {
+  background-color: red;
+  border-radius: 20px;
+  color: #fff;
+  border: 0;
+  font-size: 25px;
+  height: 50px;
+}
