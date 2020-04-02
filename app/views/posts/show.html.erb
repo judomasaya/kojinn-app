@@ -27,16 +27,17 @@
   <%= @post.allergy %>
 </div>
  現在服用中のお薬：<div class="postDate">
- 　<%= @post.kusuri %>
+  <%= @post.kusuri %>
 </div>
+
+症状説明：<div class="postText">
+　　<%= @post.title %>
+</div>
+
 画像：<div class="postImage" style="background-image: 
 url(<%= @post.image %>);">
 </div>
 
 
-
-症状説明：<div class="postText">
-　　<%= @post.title %>
-</div>
   <div class="header-link">　　　　　　　　あなたにお勧めのお薬を選びました→ <a href="https://www.daiichisankyo-hc.co.jp/products/details/lulu_attack_ex/">AI解答！</a></div>
   <div class="header-link">　　　　　　　　ドローンでの速達購入はこちら→ <a href="https://www.matsukiyo.co.jp/store/online/p/4987107609205">クリック！</a></div>

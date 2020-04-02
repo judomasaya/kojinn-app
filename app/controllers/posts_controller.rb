@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
 
-  before_action :set_post, only: [:edit, :show]
+  # before_action :set_post, only: [:show, :edit ]
+  before_action :move_to_index, except: [:index, :show]
+  # indexアクションにアクセスした時、indexアクションへのリダイレクトを繰り返し無限ループが起こるので、
+  # except: :indexを付け加えます。
+  # また、詳細ページへはログインする必要はないものとするために
+  # except: [:index, :show]としています。
 
+  # 42~44行目
 
 
   def index
@@ -33,13 +39,13 @@ class PostsController < ApplicationController
   end
 
   def show
-    # @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
     
     # 3がみたい！ルーティング設定し、routesで見るとidがついてる。そこに３のデータが入っている。
     # だからparams idの中には３が入ってる。postfindはレコードね
    end
    def edit
-    # @post = Post.find(params[:id])
+    @post = Post.find(params[:id])
    end
 
    def update
@@ -59,11 +65,17 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content, :age, :name, :allergy, :kusuri, :image).merge(user_id: current_user.id)#postモデルでストロングがcontent.title.ageなどのカラムだけしか受け取らん！という意味、うえの(post_params)の答え。カレントはログイン中のidを取得。mergeは前後の情報を合体
+    params.require(:post).permit(:title, :content, :age, :name, :allergy, :kusuri, :image).merge(user_id: current_user.id)#postモデルでストロングがcontent.title.ageなどのカラムだけしか受け取らん！という意味、うえの(post_params)の答え。カレントはログイン中のidを取得できる。mergeは前後の情報を合体
+    # 投稿を保存する際、name、image、textというビューから送られてくる情報に加えて、user_idカラムにログイン中のユーザーのidを保存しなければいけません。
+    # そのため、2つのハッシュを統合する時に使うmergeメソッドを利用して、user_idを統合しましょう。
   end
 
-  def set_post
-    @tweet = post.find(params[:id]) 
+  # def set_post
+  #   @post = post.find(params[:id])
+  # end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in? #ユーザーがログインしていない時にはindexアクションを実行する
   end
 
 end
