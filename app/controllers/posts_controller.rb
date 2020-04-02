@@ -22,7 +22,9 @@ class PostsController < ApplicationController
     # Post.create() #ActiveRecordのメソッドの一種 ()には、実際にPostテーブルに登録したいデータを記載します。
     # Post.create(content: params[:content]) #左側がカラム名（contentカラム）、右側がparamsとして送られて来たデータを表現　ただこれは正しい表記ではないので下に記載
     Post.create(post_params) #post_paramsってなんやねん　下へ
-    @posts = Post.includes(:user)
+    @posts = Post.includes(:user).order("created_at DESC")
+    # orderメソッドの引数として("created_at DESC")を足すだけで、レコードは逆順に並び替えられます。
+
     # createアクションはフォームで送られてきた情報を元に、レコードを保存します。
     # ストロングパラメーターも忘れずに設定しましょう。
     # @posts = Post.all
