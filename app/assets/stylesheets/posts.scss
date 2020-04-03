@@ -175,6 +175,11 @@ a {
 
 .card-text {
   padding: 15px 25px;
+      font-size: x-large;h3{
+        color:white;
+        background-color: black;
+        text-align: center;
+      }
 }
 
 footer {
@@ -191,10 +196,7 @@ b {
 
 
 form {
-  // background-color: yellow;
-  // text-align: center;
-  // height: 60px;
-  /* padding-top: 60px; */
+  padding-top: 60px;
 }
 
 ul {
@@ -247,8 +249,12 @@ h2{
 }
 h3{
   color:white;
-  background-color: black;
+  background-color:darkblue;
   text-align: center;
+  
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
 }
 
 
@@ -512,3 +518,13 @@ form input[type="submit"] {
   padding: 10px;
 }
 
+input, textarea {
+  font-size: 30px;
+  text-align: center;
+  height: 100px;
+  // border: solid;
+}
+
+.success {
+  text-align: center;
+}

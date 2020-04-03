@@ -3,8 +3,23 @@ Rails.application.routes.draw do
   devise_for :users
   devise_for :installs
   root to: 'posts#index'#/にアクセスしたらこれでindex画面に飛ばす
-  resources :posts#下のをリファクタリングする、postsだけで良くなる
+
+
+  resources :posts do#下のをリファクタリングする、postsだけで良くなる
   # only: [:index, :new, :create, :show, :edit, :update, :destroy]
+    resources :comments, only: :create
+    
+    collection do
+      get 'search'
+    end
+
+  end
+  # ルーティングをネストさせる一番の理由はアソシエーション先のレコードのidを
+  # paramsに追加してコントローラーに送るためです。
+  # 今回の実装だと、コメントと結びつく投稿（ぽすと）のidをparamsに追加しています。
+
+
+
   resources :users, only: :show #usersコントローラーを作成しこれを記述
   # 　マイページの詳細を見るやーつrails g controller users 忘れずに
   # これで、/users/:idのパスでアクセスした際にusers_controller.rbの
