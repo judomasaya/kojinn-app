@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   # before_action :set_post, only: [:show, :edit ]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   # indexアクションにアクセスした時、indexアクションへのリダイレクトを繰り返し無限ループが起こるので、
   # except: :indexを付け加えます。
   # また、詳細ページへはログインする必要はないものとするために
@@ -28,8 +28,9 @@ class PostsController < ApplicationController
     # Post.create() #ActiveRecordのメソッドの一種 ()には、実際にPostテーブルに登録したいデータを記載します。
     # Post.create(content: params[:content]) #左側がカラム名（contentカラム）、右側がparamsとして送られて来たデータを表現　ただこれは正しい表記ではないので下に記載
     Post.create(post_params) #post_paramsってなんやねん　下へ
-    @posts = Post.includes(:user).order("created_at DESC")
-    @posts = Post.page(params[:page]).per(5)
+    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+
+    # @posts = Post.page(params[:page]).per(5)
     # orderメソッドの引数として("created_at DESC")を足すだけで、レコードは逆順に並び替えられます。
     # kaminariによってリクエストの際paramsの中にpageというキーが追加されています。
     # その値がビューで指定したページ番号となるため、pageの引数はparams[:page]となります。
@@ -45,9 +46,16 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     
+    
+    
     # 3がみたい！ルーティング設定し、routesで見るとidがついてる。そこに３のデータが入っている。
     # だからparams idの中には３が入ってる。postfindはレコードね
    end
+
+   def search
+    @posts = Post.search(params[:keyword])
+   end
+
    def edit
     @post = Post.find(params[:id])
    end
