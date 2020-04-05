@@ -142,15 +142,12 @@ a {
 }
 
 .card-section-title {
-//   font-size: 24px;
-//   text-align: center;
-//   margin-bottom: 40px;
-    font-size: 40px;
-    text-align: center;
-    margin-bottom: 40px;
-    height: 60px;
-    line-height: 60px;
-    background: coral;
+  font-size: 70px;
+  text-align: center;
+  margin-bottom: 40px;
+  height: 300px;
+  line-height: 300px;
+  background: coral;
 }
 
 .card-list {
@@ -185,8 +182,9 @@ a {
 footer {
   line-height: 80px;
   text-align: center;
-  background-color:mediumorchid;
-  color: #fff;
+  background-color: black;
+  color: red;
+  font-size: xx-large;
 }
 
 b {
@@ -203,6 +201,7 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  // text-align: center;
 }
 
 li {
@@ -217,12 +216,11 @@ form {
 
 .kusuri-image {
   height: 450px;
-  width: 500px;
+  // width: 500px;
 }
 
 .yakuzaishi {
-  display: flex;
-}
+text-align: center;}
 
 
 h5 {
@@ -251,7 +249,7 @@ h3{
   color:white;
   background-color:darkblue;
   text-align: center;
-  
+
     height: 60px;
     line-height: 60px;
     font-size: 30px;
@@ -297,7 +295,6 @@ select {
 }
 a:hover {
   box-shadow: 0 0 60px yellow;
-  
 }
 .content__right__bottom--userName--btn:hover {
   box-shadow: 0 0 60px yellow;
@@ -345,7 +342,7 @@ body{
     margin: 30px auto 0;
     background-color: #fff;
     height: 100%;
-    width: 70%;
+    // width: 70%;
     padding: 0 0 100px 0;
     // overflow: scroll;
     .content{
@@ -527,4 +524,9 @@ input, textarea {
 
 .success {
   text-align: center;
+}
+
+
+.error {
+font-size: 39px;
 }
