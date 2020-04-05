@@ -15,16 +15,16 @@
 <%= link_to 'トップページに戻る', '/posts' %>
 
 <h1>投稿が完了しました</h1>
-<%# <%= link_to 'トップページに戻る', '/posts' %> 
+<%# <%= link_to 'トップページに戻る', '/posts' %>
 <%= link_to '1つ戻る', '/posts/new' %>
 <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
+  <%= form.text_field :keyword, placeholder: "タイトルで検索する", class: "search-input" %>
+  <%= form.submit "click!", class: "search-btn" %>
 <% end %>
 <h2>     タイトルをクリック　→　詳細へ！　　　　　　  名前をクリック　→　投稿一覧へ！</h2>
- 
+
 <div class="postTitle">
-  
+
     <% @posts.each do |post| %>
       <div class="content">
         <div class="content__left">

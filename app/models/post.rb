@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  # validates :name, presence: true
 
   belongs_to :user
   has_many :comments
@@ -8,11 +9,11 @@ class Post < ApplicationRecord
 #     Post.where('text LIKE(?)', "%#{search}%")
 #   end
 # end
-def self.search(search)
-  if search
-    Post.where('text LIKE(?)', "%#{search}%")
-  else
-    Postt.all
+  def self.search(search)
+    if search
+      Post.where('name LIKE(?)', "%#{search}%")
+    else
+      Post.all
+    end
   end
-end
 end

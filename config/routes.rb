@@ -8,8 +8,7 @@ Rails.application.routes.draw do
   resources :posts do#下のをリファクタリングする、postsだけで良くなる
   # only: [:index, :new, :create, :show, :edit, :update, :destroy]
     resources :comments, only: :create
-    
-    collection do
+        collection do
       get 'search'
     end
 
