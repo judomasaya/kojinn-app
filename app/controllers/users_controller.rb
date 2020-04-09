@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
+    # binding.pry
     @user = User.find(params[:id])
     @posts = @user.posts
     @posts = @user.posts.page(params[:page]).per(5).order("created_at DESC")
