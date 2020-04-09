@@ -5,8 +5,12 @@
 <% if user_signed_in? && current_user.id == @post.user_id %>　
 <%# ①ログインしてます？　　②ログインしているユーザー　と　投稿したユーザーが一致してます？ それなら編集・削除して良いですよ %>
   <div class="postManage">
-    <%= link_to "編集", edit_post_path(@post.id), class: "postManage__edit" %>
-    <%= link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete" %>
+    <%= link_to "編集", edit_post_path(@post.id), class: "postManage__edit",
+      data: {confirm: "落ち着いて編集するんだよ?"} %>
+    <%= link_to "削除", post_path(@post.id),
+     method: :delete,
+      class: "postManage__delete",
+      data: {confirm: "後悔はしないね?"} %>
     <%# <%= link_to "1つ戻る",'Create', 'posts_path'なぜかトップに行っちゃう %>
   </div>
 <% end %>
@@ -27,7 +31,7 @@
 いつ頃から:<div class="postDate">
   <%= @post.content %>
 </div>
-アレルギー・喘息の有無：<div class="postDate">
+[1 = アレルギー有り・喘息有り][2 = アレルギーのみ有り] [3 = 喘息のみ有り] [4 = 特になし]<div class="postDate">
   <%= @post.allergy %>
 </div>
  現在服用中のお薬：<div class="postDate">
@@ -41,6 +45,7 @@
 画像：<div class="postImage" style="background-image:
 url(<%= @post.image %>);">
 </div>
+
 
 
   <div class="header-link">　　　　　　　　あなたにお勧めのお薬を選びました→ <a href="https://www.daiichisankyo-hc.co.jp/products/details/lulu_attack_ex/">AI解答！</a></div>

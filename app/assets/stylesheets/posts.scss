@@ -24,7 +24,7 @@
 /* ヘッダー */
 
 header {
-  background-color:black;
+  background-color:darkblue;
   height: 80px;
   display: flex;
   justify-content: space-between;
@@ -49,6 +49,7 @@ a {
   border-radius: 27px;
   background-color:red;
   padding: 10px;
+  box-shadow: 0 10px 0 #d1483e;
 
 
 
@@ -126,6 +127,9 @@ a {
   background-color:red;
   margin-top: 40px;
   border-radius: 60px;
+  box-shadow: 0 5px 0 #d1483e;
+  
+
 }
 
 .cta-btn:hover {
@@ -147,7 +151,7 @@ a {
   margin-bottom: 40px;
   height: 300px;
   line-height: 300px;
-  background: coral;
+  background: darkblue;
 }
 
 .card-list {
@@ -182,8 +186,8 @@ a {
 footer {
   line-height: 80px;
   text-align: center;
-  background-color: black;
-  color: red;
+  background-color: darkblue;
+  color:white;
   font-size: xx-large;
 }
 
@@ -238,7 +242,7 @@ label {
 h1{
   color: red;
   font-size: 50px;
-  background: black;
+  background: darkblue;
   text-align: center;
 }
 h2{
@@ -282,27 +286,32 @@ select {
 
 
 
+.cta-btn {
+  box-shadow: 0 10px 0 #d1483e;
 
-
-
-
+}
 
 
 
 
 .header__right--btn:hover {
   box-shadow: 0 0 60px yellow;
+  opacity: 0.4;
 }
 a:hover {
   box-shadow: 0 0 60px yellow;
+  opacity: 0.4;
 }
 .content__right__bottom--userName--btn:hover {
+  opacity: 0.4;
   box-shadow: 0 0 60px yellow;
 }
 .content__right__top--title:hover {
+  opacity: 0.4;
   box-shadow: 0 0 60px yellow;
 }
 .header__title--text:hover {
+  opacity: 0.4;
   box-shadow: 0 0 60px yellow;
 }
 
@@ -311,11 +320,11 @@ a:hover {
 
 
 body{
-  background-color: #f6f6f6;
+  background-color: beige;
   min-width: 650px;
   .header{
     height: 56px;
-    background-color:black;
+    background-color:darkblue;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -326,6 +335,8 @@ body{
       &--text{
         text-decoration: none;
         color: #fff;
+        box-shadow: 0 10px 0 #d1483e;
+
       }
     }
     &__right{
@@ -335,6 +346,8 @@ body{
         line-height: 56px;
         color: #fff;
         margin-left:15px;
+        box-shadow: 0 10px 0 #d1483e;
+
       }
     }
   }
@@ -366,6 +379,8 @@ body{
           &--title{
             text-decoration: none;
             color:white;
+            box-shadow: 0 10px 0 #d1483e;
+
           }
         }
         &__bottom{
@@ -377,6 +392,8 @@ body{
             &--btn{
               text-decoration: none;
               color: white;
+              box-shadow: 0 10px 0 #d1483e;
+
             }
           }
           &--date{
@@ -403,18 +420,16 @@ body{
       // background-color: skyblue;
     
     }
-    .postDate{
+    .postDate {
       font-size: 25px;
-      color: #999;
       text-align: left;
-      // border: 1px solid #152a5c;
-      padding: 10px;
-    }
-    .postAuthor{
-      font-size: 30px;
-      // color: #999;
-      text-align: center;
-    }
+      padding: 0 0 70px 0;
+      border: solid;
+      width: fit-content;
+      height: 5px;
+      line-height: 70px;
+  
+  }
     .postManage{
       display: flex;
       justify-content: center;
@@ -465,7 +480,7 @@ body{
     }
     &__age{
       display: block;
-      width: 100%;
+      // width: 100%;
       height: 50%;
       margin-top: 15px;
     }
@@ -480,6 +495,8 @@ body{
       width: 30%;
       margin: 15px auto 0;
       height: 1000px;
+      box-shadow: 0 10px 0 #d1483e;
+
     }
   }
   .user{
@@ -529,4 +546,10 @@ input, textarea {
 
 .error {
 font-size: 39px;
+}
+
+
+body .form__age {
+
+  margin-top: 15px;
 }
