@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # また、詳細ページへはログインする必要はないものとするために
   # except: [:index, :show]としています。
 
-  # 42~44行目
+  # 42~44行
 
 
   def index
@@ -88,3 +88,11 @@ class PostsController < ApplicationController
   end
 
 end
+
+
+
+
+
+
+
+
