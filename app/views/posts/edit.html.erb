@@ -8,6 +8,7 @@
 
 
 <%= form_with model: @post, class: :form, local: true do |form| %>
+<%#ajax通信はこのアプリにはないので、それをキャンセルするためにlocal: trueオプション %>
     <div class="arerugii">　　
   <h2>今の症状を一言で</h2>　
   <%= form.text_area :name, placeholder: :例：コロナなのか、、、, class: :form__name %>

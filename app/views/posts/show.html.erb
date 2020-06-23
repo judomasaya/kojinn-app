@@ -17,39 +17,56 @@
 
 
 
-
-投稿時間<div class="postDate">
-  <%= @post.created_at %>
-</div>
-<div class="postAuthor">
-</div>
-
-
-年齢:<div class="postDate">
-  <%= @post.age %>歳
-</div>
-いつ頃から:<div class="postDate">
-  <%= @post.content %>
-</div>
-[1 = アレルギー有り・喘息有り][2 = アレルギーのみ有り] [3 = 喘息のみ有り] [4 = 特になし]<div class="postDate">
-  <%= @post.allergy %>
-</div>
- 現在服用中のお薬：<div class="postDate">
-  <%= @post.kusuri %>
-</div>
-
-症状の具体的な説明：<div class="postText">
-　　<%= @post.title %>
-</div>
-
-画像：<div class="postImage" style="background-image:
-url(<%= @post.image %>);">
-</div>
-
-
-
-  <div class="header-link">　　　　　　　　あなたにお勧めのお薬を選びました→ <a href="https://www.daiichisankyo-hc.co.jp/products/details/lulu_attack_ex/">AI解答！</a></div>
-  <div class="header-link">　　　　　　　　ドローンでの速達購入はこちら→ <a href="https://www.matsukiyo.co.jp/store/online/p/4987107609205">クリック！</a></div>
-
-
+<div class="post">
+  <h2>投稿時間</h2>
+  <div class="postDate">
+    <%= @post.created_at %>
+  </div>
+  <div class="postAuthor">
+  </div>
+  <h2>年齢:</h2>
+  <div class="postDate">
+    <%= @post.age %>歳
+  </div>
+  <h2>いつ頃から:</h2>
+  <div class="postDate">
+    <%= @post.content %>
+  </div>
+  <h2>持病:
+  [1 = アレルギー有り・喘息有り]
+  [2 = アレルギーのみ有り]
+  [3 = 喘息のみ有り]
+  [4 = 特になし]
+  </h2>
+  <div class="postDate">
+    <%= @post.allergy %>
+  </div>
+  <h2>年齢現在服用中のお薬：</h2>
+  <div class="postDate">
+    <%= @post.kusuri %>
+  </div>
+  <h2>年齢症状の具体的な説明：</h2>
+  <div class="postText">
+  　　<%= @post.title %>
+  </div>
+  <h2>画像：</h2>
+  <div class="postImage" style="background-image:
+  url(<%= @post.image %>);">
+  </div>
+  <div class= "links">
+    <div class="header-link">
+      <h3>AIがお勧めのお薬を選びました→
+        <a href="https://www.daiichisankyo-hc.co.jp/products/details/lulu_attack_ex/">
+        push
+        </a>
+      </h3>
+    </div>
+    <div class="header-link">
+      <h3>ドローンでの速達購入も可能です→
+        <a href="https://www.matsukiyo.co.jp/store/online/p/4987107609205">
+        push
+        </a>
+      </h3>
+    </div>
+  </div>
 </div>
