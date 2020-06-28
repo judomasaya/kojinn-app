@@ -10,22 +10,26 @@ class PostsController < ApplicationController
   # 42~44行
 
 
+
+
+  # 一覧表示ページを表示するリクエストに対応して動く
   def index
     # @post = Post.find(1)  # 1番目のレコードを@postに代入しviewへ写す
     @posts = Post.all #全てのレコードを@postsに代入 複数データの為、post→postsへ
     # @posts = Post.includes(:user) #includesを使用することによりn1問題の解消に。これをつけるだけでpostsテーブルのレコードを取得する段階で関連するusersテーブルのレコードも一度に取得することができます。
   end
 
+# 新規投稿ページを表示するリクエストに対応して動く
   def new
     @post = Post.new
     # redirect_to root_path
-
   end
-  
+
+# データの投稿を行うリクエストに対応して動く
   def create
-    # binding.pry
-    # Post.create() #ActiveRecordのメソッドの一種 ()には、実際にPostテーブルに登録したいデータを記載します。
-    # Post.create(content: params[:content]) #左側がカラム名（contentカラム）、右側がparamsとして送られて来たデータを表現　ただこれは正しい表記ではないので下に記載
+    # Post.create()の()には、実際にPostテーブルに登録したいデータを記載します。
+    # Post.create(content: params[:content]) #左側がカラム名（contentカラム）
+    # 右側がparamsとして送られて来たデータを表現　ただこれは正しい表記ではないので下に記載
     Post.create(post_params) #post_paramsってなんやねん　下へ
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
 
@@ -42,27 +46,33 @@ class PostsController < ApplicationController
     # リダイレクトさせるパスは、Prefixと_pathを用いて、ルートパスを指定しています。
   end
 
+  # 個別詳細ページを表示するリクエストに対応して動く
   def show
     @post = Post.find(params[:id])
-
-    # 3がみたい！ルーティング設定し、routesで見るとidがついてる。そこに３のデータが入っている。
-    # だからparams idの中には３が入ってる。postfindはレコードね
+    # params[:id]は元々レコードのIDが入っていたので、
+    # IDに該当するレコードの全ての情報をテーブルから取得
    end
 
    def search
     @posts = Post.search(params[:keyword])
   end
 
+  # 投稿編集ページを表示するリクエストに対応して動く
    def edit
     @post = Post.find(params[:id])
+    # params[:id]は元々レコードのIDが入っていたので、
+    # IDに該当するレコードの全ての情報をテーブルから取得し編集をする
+    # @postには編集するブログの情報が入るようになっています。
    end
 
+  #  データの編集を行うリクエストに対応して動く
    def update
     post = Post.find(params[:id])
     post.update(post_params)
     redirect_to post_path(post.id)
   end
 
+  # データの削除を行うリクエストに対応して動く
   def destroy
     post = Post.find(params[:id])
     post.destroy

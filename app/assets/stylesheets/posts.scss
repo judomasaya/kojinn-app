@@ -29,11 +29,12 @@ a {
   color: white;
   border-radius: 27px;
   background-color: red;
-  padding: 15px;
+  padding: 10px;
   box-shadow: 0 7px 0 #d1483e;
-  cursor: pointer;
+  cursor: grab;
   margin-right: 20px;
   font-size: inherit;
+  font-weight: bold;
 }
 .header-links {
   list-style: none;
@@ -46,7 +47,7 @@ a {
 }
 /* ファーストビュー */
 .fv-section {
-  height: 700px;
+  height: 600px;
   background-image: url(kusuri3.jpeg);
   background-size: cover;
   background-position: center;
@@ -68,11 +69,10 @@ a {
   width: 540px;
   padding: 10px 0;
   text-align: center;
-  font-size: 70px;
+  font-size: 50px;
   color: #fff;
   text-decoration: none;
   background-color:red;
-  margin-top: 40px;
   border-radius: 60px;
   box-shadow: 0 5px 0 #d1483e;
 }
@@ -154,6 +154,7 @@ label {
 h1{
   color:white;
   font-size: 80px;
+  text-align: center;
 }
 h2{
   padding: 150px 0 0 0;
@@ -168,6 +169,12 @@ h3{
   height: 60px;
   line-height: 60px;
   font-size: 30px;
+}
+h4{
+  padding: 150px 0 0 0;
+  color:white;
+  background-color: black;
+  font-size: xx-large;
 }
 link {
   cursor: pointer;
@@ -207,6 +214,11 @@ a:hover {
 body{
   background-color: black;
   min-width: 650px;
+  .content{
+    &__right{
+      font-size: medium;
+    }
+  }
   .header{
     background-color:darkblue;
     color: #fff;
@@ -300,9 +312,8 @@ body{
     .postDate {
       font-size: 25px;
       text-align: center;
-      padding: 0 0 70px 0;
       border: solid;
-      height: 5px;
+      // height: 5px;
       line-height: 70px;
       background: white;
     }
@@ -336,7 +347,6 @@ body{
       text-align: center;
       padding: 0 0 70px 0;
       border: solid;
-      height: 5px;
       line-height: 70px;
       background: white;
     }
@@ -395,8 +405,12 @@ form input[type="submit"] {
   border-radius: 20px;
   color: #fff;
   border: 0;
-  font-size: 40px;
   height: 50px;
+  font-size: 50px;
+  font-weight: bold;
+  box-shadow: 0 7px 0 #d1483e;
+  cursor: grab;
+
 }
 .actions {
   padding: 10px;
@@ -410,7 +424,7 @@ input, textarea {
   text-align: center;
 }
 .error {
-font-size: 39px;
+  font-size: 39px;
 }
 body .form__age {
   margin-top: 15px;
@@ -419,4 +433,8 @@ body .form__age {
 form {
   color: red;
   font-size: 20px;
+}
+
+nav.pagination {
+  padding: inherit;
 }
