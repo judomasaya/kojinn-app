@@ -1,39 +1,13 @@
-    <%# <header>
-      <h1><a href="/posts">お薬自動判別AI</a></h1>
-      <nav>
-        <ul class="header-links">
-          <li class="header-link"><a href="https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/0000180831.pdf">世界一分かりやすいお薬の知識</a></li>
-          <li class="header-link"><a href="https://www.kusurinomadoguchi.com/near">処方箋薬局サーチ</a></li>
-          <li class="header-link"><a href="https://pharmacy-search.jp/">近隣ドラッグストアサーチ</a></li>
-        </ul>
-      </nav>
-    </header> %>
-
-
-
-
 <h1>お薬自動AI機能へようこそ</h1>
-
 <%= link_to '1つ戻る', '/posts' %>
-
-
-
 <p>詳細に記入することで、お客様の症状に合う「最適なお薬」を自動的に選択します</p>
-
-
-
-
-
 <%= form_with model: @post, class: :form, local: true do |form| %>
     <div class="arerugii">　　
   <h2>今の症状を一言で</h2>　
-  <%= form.text_area :name, placeholder: :例：コロナなのか、、、, class: :form__name %>
-
-  
+  <%= form.text_area :name, placeholder: :例：コロナウイルス疑惑, class: :form__name %>
 
     <div class="arerugii">　　
   <h2>年齢を教えてください</h2>　
-  <%# <%= form.text_area :age, placeholder: :例：１００, class: :form__age %> 
   <%= form.number_field :age, placeholder: :→, class: :form__age, min: 1, max: 150 %>
 
   <h2>いつ頃から発症をしたか教えてください</h2>　
@@ -41,14 +15,12 @@
  <div class="day">
  <%= form.datetime_field :content, {start_year: 1990, end_year: 2100} %>
 </div>
-<%# <%= form.text_area :content, placeholder: :例：１週間前から, class: :form__text %> 
       <div class="arerugii">　　
   <h2>具体的な状態を教えてください</h2>　
   <%= form.text_area :title, placeholder: :例：熱が特にひどく、喉も痛いです。私はコロナなのでしょうか？, class: :form__title %>
   <h2>アレルギー・喘息などの有無を教えてください</h2>　
-  
+
   <%= form.select :allergy, [ ["アレルギー有り・喘息有り",1], ["アレルギーのみ有り", 2], ["喘息のみ有り", 3 ] ,["特になし", 4]], prompt: "選択してください" %>
-<%# <%= form.text_area :allergy, placeholder: :例：牛乳アレルギーがあります。喘息はありません。, class: :form__title %> 
   <h2>今、何か飲まれているお薬があれば教えてください</h2>　
   <%= form.text_area :kusuri, placeholder: :例：ロキソニン・高血圧のお薬・血液をサラサラにするお薬, class: :form__title %>
   <h2>画像</h2>　

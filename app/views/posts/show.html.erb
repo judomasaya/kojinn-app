@@ -6,11 +6,11 @@
 <%# ①ログインしてます？　　②ログインしているユーザー　と　投稿したユーザーが一致してます？ それなら編集・削除して良いですよ %>
   <div class="postManage">
     <%= link_to "編集", edit_post_path(@post.id), class: "postManage__edit",
-      data: {confirm: "落ち着いて編集するんだよ?"} %>
+      data: {confirm: "本当に編集しますか?"} %>
     <%= link_to "削除", post_path(@post.id),
      method: :delete,
       class: "postManage__delete",
-      data: {confirm: "後悔はしないね?"} %>
+      data: {confirm: "消すなんて嘘だろ?"} %>
     <%# <%= link_to "1つ戻る",'Create', 'posts_path'なぜかトップに行っちゃう %>
   </div>
 <% end %>
@@ -19,39 +19,39 @@
 
 <div class="post">
   <h2>投稿時間</h2>
-  <div class="postDate">
-    <%= @post.created_at %>
-  </div>
+    <div class="postDate">
+      <%= @post.created_at %>
+    </div>
   <div class="postAuthor">
   </div>
   <h2>年齢:</h2>
-  <div class="postDate">
-    <%= @post.age %>歳
-  </div>
+    <div class="postDate">
+      <%= @post.age %>歳
+    </div>
   <h2>いつ頃から:</h2>
-  <div class="postDate">
-    <%= @post.content %>
-  </div>
+    <div class="postDate">
+      <%= @post.content %>
+    </div>
   <h2>持病:
-  [1 = アレルギー有り・喘息有り]
-  [2 = アレルギーのみ有り]
-  [3 = 喘息のみ有り]
-  [4 = 特になし]
-  </h2>
+    <h4> [1 = アレルギー有り・喘息有り][2 = アレルギーのみ有り]
+    [3 = 喘息のみ有り]
+    [4 = 特になし]
+    </h4>
+  </h42>
   <div class="postDate">
     <%= @post.allergy %>
   </div>
   <h2>年齢現在服用中のお薬：</h2>
   <div class="postDate">
-    <%= @post.kusuri %>
+    <%= simple_format @post.kusuri %>
+    <%# simple_formatは投稿時に改行を含むデータを送信したときに、その改行を反映してくれる役割が %>
   </div>
   <h2>年齢症状の具体的な説明：</h2>
   <div class="postText">
-  　　<%= @post.title %>
+  　　<%= simple_format @post.title %>
   </div>
   <h2>画像：</h2>
-  <div class="postImage" style="background-image:
-  url(<%= @post.image %>);">
+  <div class="postImage" style="background-image:url(<%= @post.image %>);">
   </div>
   <div class= "links">
     <div class="header-link">
