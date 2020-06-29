@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   devise_for :users
   devise_for :installs
+
+
+  
   root to: 'posts#index' #/にアクセスしたらこれでindex画面に飛ばす
   resources :posts do#下のをリファクタリングすると、postsだけで良くなる
   # only: [:index, :new, :create, :show, :edit, :update, :destroy]

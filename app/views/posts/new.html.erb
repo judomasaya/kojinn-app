@@ -3,7 +3,7 @@
 <p>詳細に記入することで、お客様の症状に合う「最適なお薬」を自動的に選択します</p>
 <%= form_with model: @post, class: :form, local: true do |form| %>
     <div class="arerugii">　　
-  <h2>今の症状を一言で</h2>　
+  <h2>タイトル</h2>　
   <%= form.text_area :name, placeholder: :例：コロナウイルス疑惑, class: :form__name %>
 
     <div class="arerugii">　　
