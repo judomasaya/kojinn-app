@@ -69,7 +69,11 @@ class PostsController < ApplicationController
    def update
     post = Post.find(params[:id])
     post.update(post_params)
+    # idレコードの中の「post_params」で許可されたものだけupdateする
     redirect_to post_path(post.id)
+    # 保存ボタン後の遷移先
+    # post_path(post.id)とすることで、postsコントローラーのshowアクションへ
+    # リダイレクトする際に、:idにpost.idが入ることになります。
   end
 
   # データの削除を行うリクエストに対応して動く
