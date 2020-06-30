@@ -243,8 +243,10 @@ body{
       border-bottom: 1px solid #f6f6f6;
       display: flex;
       border: solid;
+      display: inline-grid;
       &__left{
         padding-right: 20px;
+        margin: 20px;
         &--image{
           height: 55px;
           width: 55px;
