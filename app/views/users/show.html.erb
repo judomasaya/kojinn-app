@@ -1,5 +1,7 @@
 <div class="postTitle">
-  <%= @user.nickname %>さんの投稿一覧
+  <div class="postname">
+    <%= @user.nickname %>さんの投稿一覧
+  </div>
     <% @posts.each do |post| %>
       <div class="content">
         <div class="content__left">
