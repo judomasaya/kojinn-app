@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  #ログイン機能の　gem deviseを利用する際にはアカウントを作成するためのUserモデルを新しく作成します。
   devise_for :installs
   root to: 'posts#index' #/にアクセスしたらこれでindex画面に飛ばす
   resources :posts do#下のをリファクタリングすると、postsだけで良くなる
@@ -20,5 +21,6 @@ end
   # これで、/users/:idのパスでアクセスした際にusers_controller.rbの
   # showアクションを呼ぶルーティングが設定できました。
 
+  # 例えば
 # resources :posts, except: :index
-# exceptを使用するとindex以外は網羅したぜ？という意味
+# exceptを使用するとindexのみ除外？という意味

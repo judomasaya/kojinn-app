@@ -5,12 +5,8 @@
 <% if user_signed_in? && current_user.id == @post.user_id %>　
 <%# ①ログインしてます？　　②ログインしているユーザー　と　投稿したユーザーが一致してます？ それなら編集・削除して良いですよ %>
   <div class="postManage">
-    <%= link_to "編集", edit_post_path(@post.id), class: "postManage__edit",
-      data: {confirm: "本当に編集しますか?"} %>
-    <%= link_to "削除", post_path(@post.id),
-     method: :delete,
-      class: "postManage__delete",
-      data: {confirm: "消すなんて嘘だろ?"} %>
+    <%= link_to "編集", edit_post_path(@post.id), class: "postManage__edit",data: {confirm: "本当に編集しますか?"} %>
+    <%= link_to "削除", post_path(@post.id),method: :delete,class: "postManage__delete",data: {confirm: "消すなんて嘘だろ?"} %>
     <%# <%= link_to "1つ戻る",'Create', 'posts_path'なぜかトップに行っちゃう %>
   </div>
 <% end %>
