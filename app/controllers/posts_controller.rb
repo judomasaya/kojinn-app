@@ -85,7 +85,7 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :content, :age, :name, :allergy, :kusuri, :image).merge(user_id: current_user.id)
-#  うえの(post_params)の答え。カレントはログイン中のidを取得できる。mergeは前後の情報を合体
+    #  うえの(post_params)の答え。カレントはログイン中のidを取得できる。mergeは前後の情報を合体
     # 投稿を保存する際、name、image、textというビューから送られてくる情報に加えて、user_idカラムにログイン中のユーザーのidを保存しなければいけません。
     # そのため、2つのハッシュを統合する時に使うmergeメソッドを利用して、user_idを統合しましょう。
     # user_idは、ログイン中のユーザーidが必要なため、current_user.idと記述することで取得が可能
