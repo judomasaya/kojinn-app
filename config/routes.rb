@@ -12,15 +12,20 @@ Rails.application.routes.draw do
       end
   end
   # ルーティングをネストさせる一番の理由はアソシエーション先のレコードのidを
-  # paramsに追加してコントローラーに送るためです。
+  # paamsに追加してコントローラーに送るためです。
   # 今回の実装だと、コメントと結びつく投稿（ぽすと）のidをparamsに追加しています。
 
-  resources :users, only: :show #usersコントローラーを作成しこれを記述
+
+
+  resources :users, only: :show
+  # マイページを表示する際にはusersコントローラーのshowアクションを動かします。
+  # rails routesで出る
+  # user GET    /users/:id(.:format)     users#show
+  # :idの部分には表示するユーザーページのユーザーのidが入ります。
+  # コントローラー内でparams[:id]と記述することにすれば/users/:idの:id部分の情報を使用することができます。
 end
   # 　マイページの詳細を見るやーつrails g controller users 忘れずに
-  # これで、/users/:idのパスでアクセスした際にusers_controller.rbの
-  # showアクションを呼ぶルーティングが設定できました。
 
-  # 例えば
+
 # resources :posts, except: :index
 # exceptを使用するとindexのみ除外？という意味

@@ -1,31 +1,17 @@
-    <%# <header>
-      <h1><a href="/posts">お薬自動判別AI</a></h1>
-      <nav>
-        <ul class="header-links">
-          <li class="header-link"><a href="https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/0000180831.pdf">世界一分かりやすいお薬の知識</a></li>
-          <li class="header-link"><a href="https://www.kusurinomadoguchi.com/near">処方箋受付が可能な薬局を探す</a></li>
-          <li class="header-link"><a href="https://pharmacy-search.jp/">近隣のドラッグストアを探す</a></li>
-        </ul>
-      </nav>
-    </header>
-
-
-
-<h1>投稿が完了しました</h1>
-<%= link_to 'トップページに戻る', '/posts' %>
-
 <h1>AI判別結果</h1>
-<%# <%= link_to 'トップページに戻る', '/posts' %>
 <%= link_to '1つ戻る', '/posts/new' %>
-<%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "タイトルで検索する", class: "search-input" %>
-  <%= form.submit "click!", class: "search-btn" %>
-<% end %>
-<h2>     タイトルをクリック　→　詳細へ！　　　　　　  名前をクリック　→　投稿一覧へ！</h2>
-
+  <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "タイトルで検索する", class: "search-input" %>
+    <%= form.submit "click!", class: "search-btn" %>
+  <% end %>
 <div class="postTitle">
   <% @posts.each do |post| %>
-  <%= render partial: "post", locals: { post: post } %>
-<% end %>
+    <%= render partial: "post", locals: { post: post } %>
+    <%# renderメソッドで使用できるオプションです。 partialというオプションを付けることで、
+    明示的に部分テンプレート名を指定し、部分テンプレートを表示することができます。
+    今回は、_post.html.erbという部分テンプレートを呼び出しています。 %>
+    <%# 右側のpostはeachメソッド内の変数としてのpostでpostのインスタンスを示しています。
+    左側のpostは部分テンプレート内での変数の名前を表しています。 %>
+  <% end %>
   <%= paginate(@posts) %>
 </div>

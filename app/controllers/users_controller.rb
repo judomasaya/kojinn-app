@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   end
 end
 
-# 今回の場合、マイページ作成で必要な情報はユーザー情報とログイン中のユーザーの投稿の2つです。
-# それぞれを@userと@postsという変数に定義しましょう。
 
+# マイページに必要な情報は
+# ユーザー情報　@user = User.find(params[:id])
+# ログイン中のユーザーの投稿　    @posts = @user.posts
+# の2つ

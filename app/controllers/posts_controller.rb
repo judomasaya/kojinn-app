@@ -15,8 +15,13 @@ class PostsController < ApplicationController
   # 一覧表示ページを表示するリクエストに対応して動く
   def index
     # @post = Post.find(1)  # 1番目のレコードを@postに代入しviewへ写す
-    @posts = Post.all #全てのレコードを@postsに代入 複数データの為、post→postsへ
-    # @posts = Post.includes(:user) #includesを使用することによりn1問題の解消に。これをつけるだけでpostsテーブルのレコードを取得する段階で関連するusersテーブルのレコードも一度に取得することができます。
+    @posts = Post.all
+    @posts = Post.includes(:user)
+    #全てのレコードを@postsに代入 複数データの為、post→postsへ
+    # @posts = Post.includes(:user) #includesを使用することによりn1問題の解消に。
+#     これをつけるだけでpostsテーブルのレコードを取得する段階で関連するusersテーブルのレコードも一度に取得することができます。
+#     処理が速くなります。
+# テーブルのレコード数が多くなるほど処理速度の差が大きくなるので、アソシエーションを組んだ際は必ずincludesメソッドを利用して対策しましょう。
   end
 
 # 新規投稿ページを表示するリクエストに対応して動く
@@ -27,6 +32,7 @@ class PostsController < ApplicationController
 
 # データの投稿を行うリクエストに対応して動く
   def create
+    # binding.pry
     # Post.create()の()には、実際にPostテーブルに登録したいデータを記載します。
     # Post.create(content: params[:content]) #左側がカラム名（contentカラム）
     # 右側がparamsとして送られて来たデータを表現　ただこれは正しい表記ではないので下に記載
