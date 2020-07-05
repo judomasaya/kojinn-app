@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   #ログイン機能の　gem deviseを利用する際にはアカウントを作成するためのUserモデルを新しく作成します。
   devise_for :installs
   root to: 'posts#index' #/にアクセスしたらこれでindex画面に飛ばす
-  resources :posts do#下のをリファクタリングすると、postsだけで良くなる
+  resources :posts do
+    # resourcesは、7つのアクションをまとめてルーティングの設定ができるので7つのアクション全てを記述した今、only以下は不要
   # only: [:index, :new, :create, :show, :edit, :update, :destroy]
     resources :comments, only: [:create]
       collection do

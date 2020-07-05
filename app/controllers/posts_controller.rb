@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  # before_action :set_post, only: [:edit, :show ]
+  before_action :set_post, only: [:show, :edit]
   before_action :move_to_index, except: [:index, :show, :search]
   # indexアクションにアクセスした時、indexアクションへのリダイレクトを繰り返し無限ループが起こるので、
   # except: :indexを付け加えます。
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
 
   # 個別詳細ページを表示するリクエストに対応して動く
   def show
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     # params[:id]は元々レコードのIDが入っていたので、
     # IDに該当するレコードの全ての情報をテーブルから取得
    end
@@ -65,7 +65,7 @@ class PostsController < ApplicationController
 
   # 投稿編集ページを表示するリクエストに対応して動く
    def edit
-    @post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     # params[:id]は元々レコードのIDが入っていたので、
     # IDに該当するレコードの全ての情報をテーブルから取得し編集をする
     # @postには編集するブログの情報が入るようになっています。
@@ -97,9 +97,9 @@ class PostsController < ApplicationController
     # user_idは、ログイン中のユーザーidが必要なため、current_user.idと記述することで取得が可能
   end
 
-  # def set_post
-  #   @post = post.find(params[:id])
-  # end
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def move_to_index
     redirect_to action: :index unless user_signed_in? #ユーザーがログインしていない時にはindexアクションを実行する
