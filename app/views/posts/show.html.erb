@@ -1,5 +1,6 @@
 <div class="postTitle">
   <h1>『<%= @post.name %>』</h1>
+  <h2> <%= @post.nickname%></h2>
 </div>
 <% if user_signed_in? && current_user.id == @post.user_id %>　
 <%# ①ログインしてます？　　②ログインしているユーザー　と　投稿したユーザーが一致してます？ それなら編集・削除して良いですよ %>
@@ -14,8 +15,6 @@
     <div class="postDate">
       <%= @post.created_at %>
     </div>
-  <div class="postAuthor">
-  </div>
   <h2>年齢:</h2>
     <div class="postDate">
       <%= @post.age %>歳
@@ -24,13 +23,14 @@
     <div class="postDate">
       <%= @post.content %>
     </div>
-  <h2>持病:
-    <h4> [1 = アレルギー有り・喘息有り][2 = アレルギーのみ有り]
-    [3 = 喘息のみ有り]
-    [4 = 特になし]
-    </h4>
-  <div class="postDate">
-    <%= @post.allergy %>
+  <div class="allergy">
+    <h2>1 = [アレルギー◯ 喘息◯]</h2>
+    <h2>2 = [アレルギー◯ 喘息×]</h2>
+    <h2>3 = [アレルギー× 喘息◯]</h2>
+    <h2>4 = [アレルギー× 喘息×]</h2>
+    <div class="postDate">
+      <%= @post.allergy %>
+    </div>
   </div>
   <h2>年齢現在服用中のお薬：</h2>
   <div class="postDate">
@@ -60,4 +60,5 @@
       </h3>
     </div>
   </div>
+</div>
 </div>
