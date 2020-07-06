@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリ名
+ 
+お薬自動判別AI
+ 
+## 概要
 
-Things you may want to cover:
+このアプリではまず、お客様の年齢・症状・飲み合わせのお薬などを記入します。投稿後、それに対しAIがお薬を選択するというものです。（AI機能は理想です）
+ 
+ ## 制作背景
+ドラッグストア勤務でずっと感じていた接客の問題点を改善したいと思いました。
 
-* Ruby version
+１、体調不良の中の接客での待ち時間軽減　
+2、接客による感染のリスク軽減　
+３、お客様のお薬の知識向上　
+４、ノルマの為のお勧めお薬を避ける　
+５、登録販売者店員の知識の薄さから避ける　
+ 
+***デモ***
+ 
+ [![Image from Gyazo](https://i.gyazo.com/a4b973ee9975ad759a501290a9236760.jpg)](https://gyazo.com/a4b973ee9975ad759a501290a9236760)
+[![Image from Gyazo](https://i.gyazo.com/e1b041fd3ccb7d64882d5c5d1d640da3.png)](https://gyazo.com/e1b041fd3ccb7d64882d5c5d1d640da3)
+ 
+## 機能
+ 
+- ログイン機能
+- 投稿機能
+- ページネーション機能
+- 投稿検索機能
 
-* System dependencies
 
-* Configuration
+## デプロイ
+ 
+まだできておりません。
 
-* Database creation
+##DB設計
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+まだできておりません
