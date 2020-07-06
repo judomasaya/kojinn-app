@@ -17,7 +17,7 @@
 ４、ノルマの為のお勧めお薬を避ける　
 ５、登録販売者店員の知識の薄さから避ける　
  
-***デモ***
+## デモ
  
  [![Image from Gyazo](https://i.gyazo.com/a4b973ee9975ad759a501290a9236760.jpg)](https://gyazo.com/a4b973ee9975ad759a501290a9236760)
 [![Image from Gyazo](https://i.gyazo.com/e1b041fd3ccb7d64882d5c5d1d640da3.png)](https://gyazo.com/e1b041fd3ccb7d64882d5c5d1d640da3)
