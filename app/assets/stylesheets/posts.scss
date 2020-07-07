@@ -7,6 +7,9 @@
   // width: 40%;
   margin-top: 30px;
   // padding: 150px;
+}
+.postContent{
+  padding: 200px 0 200px 0;
 
 }
 .post-date{
@@ -409,14 +412,14 @@ form input[type="submit"] {
   color: #fff;
   border: 0;
   height: 50px;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   box-shadow: 0 7px 0 #d1483e;
   cursor: grab;
 
 }
 .actions {
-  padding: 10px;
+  padding: 30px 0;
 }
 input, textarea {
   font-size: 30px;
