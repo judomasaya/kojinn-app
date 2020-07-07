@@ -1,6 +1,6 @@
 <div class="postTitle">
-  <h1>『<%= @post.name %>』</h1>
-  <h2> <%= @post.nickname%></h2>
+  <h1>タイトル『<%= @post.name %>』</h1>
+  <h2> ニックネーム：<%= @post.nickname%></h2>
 </div>
 <% if user_signed_in? && current_user.id == @post.user_id %>　
 <%# ①ログインしてます？　　②ログインしているユーザー　と　投稿したユーザーが一致してます？ それなら編集・削除して良いですよ %>

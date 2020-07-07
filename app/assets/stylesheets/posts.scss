@@ -160,7 +160,7 @@ h1{
   text-align: center;
 }
 h2{
-  // padding: 150px 0 0 0;
+  padding: 0 60px;
   color:white;
   background-color: black;
   font-size: xx-large;
@@ -260,6 +260,7 @@ body{
       display: flex;
       border: solid;
       display: inline-grid;
+      margin: 20px;
       &__left{
         padding-right: 20px;
         margin: 20px;
@@ -310,6 +311,14 @@ body{
     }
     .postTitle{
       padding-top: 20px;
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      color:red;
+      border: solid 30px;
+    }
+    .postTitles{
+      padding-top: 100px;
       text-align: center;
       font-size: 40px;
       font-weight: bold;
