@@ -7,6 +7,9 @@
   // width: 40%;
   margin-top: 30px;
   // padding: 150px;
+}
+.postContent{
+  padding: 200px 0 200px 0;
 
 }
 .post-date{
@@ -157,7 +160,7 @@ h1{
   text-align: center;
 }
 h2{
-  // padding: 150px 0 0 0;
+  padding: 0 60px;
   color:white;
   background-color: black;
   font-size: xx-large;
@@ -257,6 +260,7 @@ body{
       display: flex;
       border: solid;
       display: inline-grid;
+      margin: 20px;
       &__left{
         padding-right: 20px;
         margin: 20px;
@@ -307,6 +311,14 @@ body{
     }
     .postTitle{
       padding-top: 20px;
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      color:red;
+      border: solid 30px;
+    }
+    .postTitles{
+      padding-top: 100px;
       text-align: center;
       font-size: 40px;
       font-weight: bold;
@@ -409,14 +421,14 @@ form input[type="submit"] {
   color: #fff;
   border: 0;
   height: 50px;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
   box-shadow: 0 7px 0 #d1483e;
   cursor: grab;
 
 }
 .actions {
-  padding: 10px;
+  padding: 30px 0;
 }
 input, textarea {
   font-size: 30px;

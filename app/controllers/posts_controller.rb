@@ -27,7 +27,6 @@ class PostsController < ApplicationController
 # 新規投稿ページを表示するリクエストに対応して動く
   def new
     @post = Post.new
-    # redirect_to root_path
   end
 
 # データの投稿を行うリクエストに対応して動く
@@ -48,7 +47,7 @@ class PostsController < ApplicationController
     # createアクションはフォームで送られてきた情報を元に、レコードを保存します。
     # ストロングパラメーターも忘れずに設定しましょう。
     # @posts = Post.all
-    # redirect_to root_path
+    redirect_to root_path
     # リダイレクトさせるパスは、Prefixと_pathを用いて、ルートパスを指定しています。
   end
 

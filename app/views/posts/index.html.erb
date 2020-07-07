@@ -16,6 +16,26 @@
         <p class="fv-text">〜お客様の症状別に合わせてお薬を自動判別〜</p>
         <a href="/posts/new" class="cta-btn">GO</a>
       </section>
+    </main>
+    <div class= "postContent">
+      <h1>みんなのAI判別結果</h1>
+      <%= link_to '1つ戻る', '/posts/new' %>
+      <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
+        <%= form.text_field :keyword, placeholder: "タイトルで検索する", class: "search-input" %>
+        <%= form.submit "click!", class: "search-btn" %>
+      <% end %>
+      <div class="postTitles">
+        <% @posts.each do |post| %>
+          <%= render partial: "post", locals: { post: post } %>
+        <%# renderメソッドで使用できるオプションです。 partialというオプションを付けることで、
+        明示的に部分テンプレート名を指定し、部分テンプレートを表示することができます。
+        今回は、_post.html.erbという部分テンプレートを呼び出しています。 %>
+        <%# 右側のpostはeachメソッド内の変数としてのpostでpostのインスタンスを示しています。
+        左側のpostは部分テンプレート内での変数の名前を表しています。 %>
+        <% end %>
+        <%# <%= paginate(@posts) %>
+      </div>
+    </div>
     <footer>
       <small>kojinn2 all rights reserved</small>
     </footer>
