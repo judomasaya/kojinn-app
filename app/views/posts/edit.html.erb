@@ -1,46 +1,42 @@
-
 <div class="content__title">
   投稿の編集
-<%= link_to '新規投稿画面へ戻る', '/posts/new' %>
+  <%= link_to '新規投稿画面へ戻る', '/posts/new' %>
 </div>
-
-
-
-
 <%= form_with model: @post, class: :form, local: true do |form| %>
-<%#ajax通信はこのアプリにはないので、それをキャンセルするためにlocal: trueオプション %>
-    <div class="arerugii">　　
-  <h2>ニックネーム</h2>　
-  <%= form.text_area :nickname, placeholder: :例：コロナなのか、、、, class: :form__name %>
-    <div class="arerugii">　　
-  <h2>症状名</h2>　
-  <%= form.text_area :name, placeholder: :例：コロナなのか、、、, class: :form__name %>
-
-  
-
-    <div class="arerugii">　　
-  <h2>年齢</h2>　
-  <%# <%= form.text_area :age, placeholder: :例：１００, class: :form__age %> 
-  <%= form.number_field :age, placeholder: :→, class: :form__age, min: 1, max: 150 %>
-
-  <h2>発症時期</h2>　
-      <div class="day">　　
- <div class="day">
- <%= form.datetime_field :content, {start_year: 1990, end_year: 2100} %>
-</div>
-<%# <%= form.text_area :content, placeholder: :例：１週間前から, class: :form__text %> 
-      <div class="arerugii">　　
+  <%#ajax通信はこのアプリにはないので、それをキャンセルするためにlocal: trueオプション %>
+  <div class="arerugii">　　
+    <h2>ニックネーム</h2>　
+    <%= form.text_area :nickname, placeholder: :例：コロナなのか、、、, class: :form__name %>
+  </div>
+  <div class="arerugii">　　
+    <h2>症状名</h2>　
+    <%= form.text_area :name, placeholder: :例：コロナなのか、、、, class: :form__name %>
+  </div>
+  <div class="arerugii">　　
+    <h2>年齢</h2>　
+    <%= form.number_field :age, placeholder: :→, class: :form__age, min: 1, max: 150 %>
+  </div>
+  <div class="day">　　
+    <h2>発症時期</h2>　
+  </div>
+  <div class="day">
+    <%= form.datetime_field :content, {start_year: 1990, end_year: 2100} %>
+  </div>
+  <div class="arerugii">　　
   <h2>具体的な症状</h2>　
   <%= form.text_area :title, placeholder: :例：熱が特にひどく、喉も痛いです。私はコロナなのでしょうか？, class: :form__title %>
-  <h2>アレルギー・喘息の有無</h2>　
-  
-  <%= form.select :allergy,[["アレルギー◯・喘息◯",1], ["アレルギー◯・喘息×", 2], ["アレルギー×・喘息◯", 3 ] ,["アレルギー×・喘息×", 4]], prompt: "職業を選択してください" %>
-<%# <%= form.text_area :allergy, placeholder: :例：牛乳アレルギーがあります。喘息はありません。, class: :form__title %> 
-  <h2>服用薬</h2>　
-  <%= form.text_area :kusuri, placeholder: :例：ロキソニン・高血圧のお薬・血液をサラサラにするお薬, class: :form__title %>
-  <h2>画像</h2>　
-  <%= form.text_area :image, placeholder: :例：お薬手帳・症状の部位・ネットから似ている症状の写真の引用, class: :form__title %>
-
-
+    </div>
+  <div class="arerugii">　　
+    <h2>アレルギー・喘息の有無</h2>　
+    <%= form.text_area :allergy, placeholder: :例：牛乳アレルギーがあります。喘息はありません。, class: :form__title %>
+  </div>
+  <div class="arerugii">　　
+    <h2>服用薬</h2>　
+    <%= form.text_area :kusuri, placeholder: :例：ロキソニン・高血圧のお薬・血液をサラサラにするお薬, class: :form__title %>
+  </div>
+  <div class="arerugii">　　
+    <h2>画像</h2>　
+    <%= form.text_area :image, placeholder: :例：お薬手帳・症状の部位・ネットから似ている症状の写真の引用, class: :form__title %>
+  </div>
   <%= form.submit '保存する', class: :form__btn %>
 <% end %>

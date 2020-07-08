@@ -219,6 +219,7 @@ body{
   background-color: black;
   min-width: 650px;
   .content{
+
     &__right{
       font-size: medium;
     }
@@ -249,13 +250,16 @@ body{
       }
     }
   }
+  .title{
+    padding: 80px 0 0 20px;
+  } 
   .contents{
     margin: 30px auto 0;
     background-color:currentColor;
     // height: 100%;
     padding: 150px;
     .content{
-      padding: 60px;
+      // padding: 60px;
       border-bottom: 1px solid #f6f6f6;
       display: flex;
       border: solid;

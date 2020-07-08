@@ -25,7 +25,7 @@
   </div>
   <div class="post">
     <h2>アレルギー・喘息の有無</h2>　
-    <%= form.select :allergy, [["アレルギー◯・喘息◯",1], ["アレルギー◯・喘息×", 2], ["アレルギー×・喘息◯", 3 ] ,["アレルギー×・喘息×", 4]], prompt: "選択してください" %>
+    <%= form.text_area :allergy,placeholder: "例：牛乳アレルギー、喘息有り", class: :form__name %>
   </div>
   <div class="post">
     <h2>服用薬</h2>　

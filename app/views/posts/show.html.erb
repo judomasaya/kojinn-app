@@ -10,38 +10,33 @@
     <%# <%= link_to "1つ戻る",'Create', 'posts_path'なぜかトップに行っちゃう %>
   </div>
 <% end %>
-<div class="post">
+< class="post">
   <h2>投稿時間</h2>
     <div class="postDate">
       <%= @post.created_at %>
     </div>
-  <h2>年齢:</h2>
+  <h2>年齢</h2>
     <div class="postDate">
       <%= @post.age %>歳
     </div>
-  <h2>いつ頃から:</h2>
+  <h2>いつ頃から</h2>
     <div class="postDate">
       <%= @post.content %>
     </div>
-  <div class="allergy">
-    <h2>1 = [アレルギー◯ 喘息◯]</h2>
-    <h2>2 = [アレルギー◯ 喘息×]</h2>
-    <h2>3 = [アレルギー× 喘息◯]</h2>
-    <h2>4 = [アレルギー× 喘息×]</h2>
+  <h2>アレルギー・喘息の有無</h2>
     <div class="postDate">
       <%= @post.allergy %>
     </div>
-  </div>
-  <h2>現在服用中のお薬：</h2>
+  <h2>現在服用中のお薬</h2>
   <div class="postDate">
     <%= simple_format @post.kusuri %>
     <%# simple_formatは投稿時に改行を含むデータを送信したときに、その改行を反映してくれる役割が %>
   </div>
-  <h2>症状の具体的な説明：</h2>
+  <h2>症状の具体的な説明</h2>
   <div class="postText">
   　　<%= simple_format @post.title %>
   </div>
-  <h2>画像：</h2>
+  <h2>画像</h2>
   <div class="postImage" style="background-image:url(<%= @post.image %>);">
   </div>
   <div class= "links">
