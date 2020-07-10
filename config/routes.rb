@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   root to: 'posts#index' #/にアクセスしたらこれでindex画面に飛ばす
   resources :posts do
     resources :comments, only: [:create]
-        collection do
-          get 'search'
-        end
+      collection do
+        get 'search'
+      end
     end
     # resourcesは、7つのアクションをまとめてルーティングの設定ができるので7つのアクション全てを記述した今、only以下は不要
   # only: [:index, :new, :create, :show, :edit, :update, :destroy]

@@ -53,13 +53,17 @@ class PostsController < ApplicationController
 
   # 個別詳細ページを表示するリクエストに対応して動く
   def show
-    # @post = Post.find(params[:id])
-    # params[:id]は元々レコードのIDが入っていたので、
-    # IDに該当するレコードの全ての情報をテーブルから取得
-   end
+  @comment = Comment.new
+  @comments = @post.comments.includes(:user)
+  # posts/show.html.erbでform_withを使用して、comments#createにアクション先を飛ばしたいので、
+  # @comment = Comment.newとインスタンス生成をしないといけません。
+  # ビューでは誰のコメントかを明らかにするためアソシを使ってユーザーのレコードを取得
+  # その時に「N+1問題」が発生してしまうので、includesメソッド使用
+# では、コントローラーであるpostsについて投稿されたコメントの全レコードを取得することができたので、これらをビューで表示しましょう。
+  end
 
-   def search
-    @posts = Post.search(params[:keyword])
+  def search
+  @posts = Post.search(params[:keyword])
   end
 
   # 投稿編集ページを表示するリクエストに対応して動く
