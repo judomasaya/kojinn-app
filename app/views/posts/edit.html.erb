@@ -5,21 +5,19 @@
 <%= form_with model: @post, class: :form, local: true do |form| %>
   <%#ajax通信はこのアプリにはないので、それをキャンセルするためにlocal: trueオプション %>
   <div class="arerugii">　　
-    <h2>ニックネーム</h2>　
-    <%= form.text_area :nickname, placeholder: :例：コロナなのか、、、, class: :form__name %>
+    <h2>症状名</h2>　
+    <%= form.text_area :name, placeholder: :喉が痛い, class: :form__name %>
   </div>
   <div class="arerugii">　　
-    <h2>症状名</h2>　
-    <%= form.text_area :name, placeholder: :例：コロナなのか、、、, class: :form__name %>
+    <h2>店員さんにお勧めされたお薬</h2>　
+    <%= form.text_area :nickname, placeholder: :ルルアッタEX, class: :form__name %>
   </div>
   <div class="arerugii">　　
     <h2>年齢</h2>　
     <%= form.number_field :age, placeholder: :→, class: :form__age, min: 1, max: 150 %>
   </div>
-  <div class="day">　　
-    <h2>発症時期</h2>　
-  </div>
   <div class="day">
+   <h2>発症時期（再度入力）</h2>　
     <%= form.datetime_field :content, {start_year: 1990, end_year: 2100} %>
   </div>
   <div class="arerugii">　　
@@ -39,4 +37,4 @@
     <%= form.text_area :image, placeholder: :例：お薬手帳・症状の部位・ネットから似ている症状の写真の引用, class: :form__title %>
   </div>
   <%= form.submit '保存する', class: :form__btn %>
-<% end %>
+  <% end %>

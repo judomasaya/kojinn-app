@@ -15,8 +15,8 @@ class PostsController < ApplicationController
   # 一覧表示ページを表示するリクエストに対応して動く
   def index
     # @post = Post.find(1)  # 1番目のレコードを@postに代入しviewへ写す
-    @posts = Post.all
-    @posts = Post.includes(:user)
+    # @posts = Post.all
+    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(3)
     #全てのレコードを@postsに代入 複数データの為、post→postsへ
     # @posts = Post.includes(:user) #includesを使用することによりn1問題の解消に。
 #     これをつけるだけでpostsテーブルのレコードを取得する段階で関連するusersテーブルのレコードも一度に取得することができます。
@@ -36,7 +36,7 @@ class PostsController < ApplicationController
     # Post.create(content: params[:content]) #左側がカラム名（contentカラム）
     # 右側がparamsとして送られて来たデータを表現　ただこれは正しい表記ではないので下に記載
     Post.create(post_params) #post_paramsってなんやねん　下へ
-    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
+    # @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(5)
 
     # @posts = Post.page(params[:page]).per(5)
     # orderメソッドの引数として("created_at DESC")を足すだけで、レコードは逆順に並び替えられます。

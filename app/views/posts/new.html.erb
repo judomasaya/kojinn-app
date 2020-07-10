@@ -1,40 +1,39 @@
-  <h1>お薬自動AI機能へようこそ</h1>
-  <%= link_to '1つ戻る', '/posts' %>
-< class= "posts">
-  <p>詳細に記入することで、お客様の症状に合う「最適なお薬」を自動的に選択します</p>
-  <%= form_with model: @post, class: :form, local: true do |form| %>
-  <div class="post">　　
-    <h2>ニックネーム</h2>　
-    <%= form.text_area :nickname, placeholder: "AI　太郎", class: :form__name %>
-  </div>
-  <div class="post">　　
-    <h2>症状名</h2>　
-    <%= form.text_area :name, placeholder: "コロナウイルス疑惑", class: :form__name %>
-  </div>
-  <div class="post">　　
-    <h2>年齢入力</h2>　
-    <%= form.number_field :age, placeholder: "↓↑", class: :form__age, min: 1, max: 150 %>
-  </div>
-  <div class="post">　　
-    <h2>発症時期</h2>　
-    <%= form.datetime_field :content, {start_year: 1990, end_year: 2100} %>
-  </div>
-  <div class="post">　　
-    <h2>具体的な症状</h2>　
-    <%= form.text_area :title, placeholder: "例：熱が特にひどく、喉も痛いです。私はコロナなのでしょうか？", class: :form__title,rows: "４"%>
-  </div>
-  <div class="post">
-    <h2>アレルギー・喘息の有無</h2>　
-    <%= form.text_area :allergy,placeholder: "例：牛乳アレルギー、喘息有り", class: :form__name %>
-  </div>
-  <div class="post">
-    <h2>服用薬</h2>　
-    <%= form.text_area :kusuri, placeholder: "例：ロキソニン・高血圧のお薬・血液をサラサラにするお薬", class: :form__title %>
-  </div>
-  <div class="post">
-    <h2>画像</h2>　
-    <%= form.text_area :image, placeholder: "例：お薬手帳・症状の部位・ネットから似ている症状の写真の引用", class: :form__title %>
-  </div>
-    <%= form.submit "AI判別開始", class: :form__btn %>
+<h1>お勧めされたお薬について伺います</h1>
+<%= link_to '1つ戻る', '/posts' %>
+  <div class= "posts">
+    <%= form_with model: @post, class: :form, local: true do |form| %>
+      <div class="post">　　
+        <h2>あなたの症状</h2>　
+        <%= form.text_area :name, placeholder: "熱・咳・鼻水・喉の痛み", class: :form__name %>
+      </div>
+      <div class="post">　　
+        <h2>店員さんにお勧めされたお薬名</h2>　
+        <%= form.text_area :nickname, placeholder: "AI　太郎", class: :form__name %>
+      </div>
+      <div class="post">　　
+        <h2>あなたの年齢</h2>　
+        <%= form.number_field :age, placeholder: "↓↑", class: :form__age, min: 1, max: 150 %>
+      </div>
+      <div class="post">　　
+        <h2>発症時期</h2>　
+        <%= form.datetime_field :content, {start_year: 1990, end_year: 2100} %>
+      </div>
+      <div class="post">　　
+        <h2>具体的な症状説明</h2>　
+        <%= form.text_area :title, placeholder: "例：熱が特にひどく、喉も痛いです。私はコロナなのでしょうか？", class: :form__title,rows: "４"%>
+      </div>
+      <div class="post">
+        <h2>アレルギー・喘息の有無</h2>　
+        <%= form.text_area :allergy,placeholder: "例：牛乳アレルギー、喘息有り", class: :form__name %>
+      </div>
+      <div class="post">
+        <h2>現在服用しているお薬</h2>　
+        <%= form.text_area :kusuri, placeholder: "例：ロキソニン・高血圧のお薬・血液をサラサラにするお薬", class: :form__title %>
+      </div>
+      <div class="post">
+        <h2>画像</h2>　
+        <%= form.text_area :image, placeholder: "例：お薬手帳・症状の部位・ネットから似ている症状の写真の引用", class: :form__title %>
+      </div>
+      <%= form.submit "投稿", class: :form__btn %>
     <% end %>
-</div>
+  </div>

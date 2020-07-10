@@ -11,14 +11,16 @@
   <div class="wrapper">
     <main>
       <section class="fv-section">
-        <p class="main-copy"><b>風邪薬はAIが選ぶ</b>
+        <p class="main-copy"><b>市販薬を共有することで</b>
         </p>
-        <p class="fv-text">〜お客様の症状別に合わせてお薬を自動判別〜</p>
+        <p class="fv-text">１、症状に合うお薬が、来店後すぐに購入できる</p>
+        <p class="fv-text">２、どのお薬がお勧めなのか、すぐにわかる</p>
+        <p class="fv-text">３、薬剤師と登録販売者の知識の違いを、把握できる</p>
         <a href="/posts/new" class="cta-btn">GO</a>
       </section>
     </main>
     <div class= "postContent">
-      <h1>みんなのAI判別結果</h1>
+      <h1>投稿一覧</h1>
       <%= link_to '1つ戻る', '/posts/new' %>
       <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
         <%= form.text_field :keyword, placeholder: "タイトルで検索する", class: "search-input" %>
@@ -33,7 +35,7 @@
         <%# 右側のpostはeachメソッド内の変数としてのpostでpostのインスタンスを示しています。
         左側のpostは部分テンプレート内での変数の名前を表しています。 %>
         <% end %>
-        <%# <%= paginate(@posts) %>
+        <%= paginate(@posts)%>
       </div>
     </div>
     <footer>

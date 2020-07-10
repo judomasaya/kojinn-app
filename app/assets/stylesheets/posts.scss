@@ -1,7 +1,3 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .post{
   border: 10px solid;
   // width: 40%;
@@ -38,6 +34,10 @@ a {
   margin-right: 20px;
   font-size: inherit;
   font-weight: bold;
+  width: 130px;
+  text-decoration: none;
+
+
 }
 .header-links {
   list-style: none;
@@ -78,6 +78,7 @@ a {
   background-color:red;
   border-radius: 60px;
   box-shadow: 0 5px 0 #d1483e;
+
 }
 .cta-btn:hover {
   box-shadow: 0 0 60px yellow;
@@ -186,6 +187,7 @@ input, textarea {
   font-size: 30px;
   text-align: center;
   height: 100px;
+  // width: 90%;
 }
 select {
   font-size: 30px;
@@ -200,6 +202,10 @@ select {
   opacity: 0.4;
 }
 a:hover {
+  box-shadow: 0 0 60px yellow;
+  opacity: 0.4;
+}
+.search-btn:hover {
   box-shadow: 0 0 60px yellow;
   opacity: 0.4;
 }
@@ -314,7 +320,7 @@ body{
       }
     }
     .postTitle{
-      padding-top: 20px;
+      padding: 20px 0;
       text-align: center;
       font-size: 40px;
       font-weight: bold;
@@ -349,6 +355,7 @@ body{
         text-decoration: none;
         margin-right: 10px;
         font-size: 40px;
+        text-align: center;
       }
       &__delete{
         display: block;
@@ -359,6 +366,7 @@ body{
         text-decoration: none;
         margin-left: 10px;
         font-size: 40px;
+        text-align: center;
       }
     }
     .postText{
@@ -424,11 +432,12 @@ form input[type="submit"] {
   border-radius: 20px;
   color: #fff;
   border: 0;
-  height: 50px;
+  height: 70px;
   font-size: 40px;
   font-weight: bold;
   box-shadow: 0 7px 0 #d1483e;
   cursor: grab;
+  
 
 }
 .actions {
@@ -452,6 +461,7 @@ body .form__age {
 form {
   color: red;
   font-size: 20px;
+  // display: flex;
 }
 
 nav.pagination {
