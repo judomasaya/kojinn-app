@@ -37,7 +37,19 @@
   　　<%= simple_format @post.title %>
   </div>
   <h2>画像</h2>
-  <div class="postImage" style="background-image:url(<%= @post.image %>);">
+    <div class="postImage" style="background-image:url(<%= @post.image %>);">
   </div>
-</div>
+    <div class="container">
+      <% if current_user %>
+        <%= form_with(model: [@post
+        # , @comment⬅︎これ入れるとエラー出るねん　undefined method `model_name' for nil:NilClass
+        ], local: true) do |form| %>
+          <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+          <%= form.submit "SEND" %>
+        <% end %>
+      <% else %>
+        <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+      <% end %>
+    </div>
+  </div>
 </div>

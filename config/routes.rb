@@ -5,13 +5,18 @@ Rails.application.routes.draw do
   devise_for :installs
   root to: 'posts#index' #/にアクセスしたらこれでindex画面に飛ばす
   resources :posts do
+    resources :comments, only: [:create]
+        collection do
+          get 'search'
+        end
+    end
     # resourcesは、7つのアクションをまとめてルーティングの設定ができるので7つのアクション全てを記述した今、only以下は不要
   # only: [:index, :new, :create, :show, :edit, :update, :destroy]
-    resources :comments, only: [:create]
-      collection do
-        get 'search'
-      end
-  end
+  # コメントには必ずコメント先となる投稿が存在しています。
+  # ネストによって、/tweets/:tweet_id/comments(.:format)となっています。
+  # リンクを飛ばすときは、この:tweet_idのところにコメントと結びつくツイートのidを記述します。
+  # すると、paramsのなかにtweet_idというキーが追加され、コントローラーで扱うことができます。
+  # rails routesにより
   # ルーティングをネストさせる一番の理由はアソシエーション先のレコードのidを
   # paamsに追加してコントローラーに送るためです。
   # 今回の実装だと、コメントと結びつく投稿（ぽすと）のidをparamsに追加しています。
