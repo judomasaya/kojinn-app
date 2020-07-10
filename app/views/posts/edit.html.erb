@@ -5,4 +5,5 @@
 <%= form_with model: @post, class: :form, local: true do |form| %>
   <%#ajax通信はこのアプリにはないので、それをキャンセルするためにlocal: trueオプション %>
 <%= render partial: "date", locals: { form: form } %>
+    <%# form_withの中では、formという変数を利用しているので、locals: { form: form }という記述になっていることに注意しましょう。 %>
 <% end %>
