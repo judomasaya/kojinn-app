@@ -23,7 +23,7 @@
       <h1>投稿一覧</h1>
       <%= link_to '1つ戻る', '/posts/new' %>
       <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "タイトルで検索する", class: "search-input" %>
+        <%= form.text_field :keyword, placeholder: "症状で検索する", class: "search-input" %>
         <%= form.submit "click!", class: "search-btn" %>
       <% end %>
       <div class="postTitles">
