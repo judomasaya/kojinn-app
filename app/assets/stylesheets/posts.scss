@@ -423,12 +423,12 @@ body{
   }
 }
 .postImage {
-  padding: 300px ;
+  // padding: 300px ;
   background-size: cover;
   background-position: center center;
 }
 form input[type="submit"] {
-  background-color: red;
+  background-color:deepskyblue;
   border-radius: 20px;
   color: #fff;
   border: 0;
@@ -437,8 +437,7 @@ form input[type="submit"] {
   font-weight: bold;
   box-shadow: 0 7px 0 #d1483e;
   cursor: grab;
-  
-
+  line-height: 70px;
 }
 .actions {
   padding: 30px 0;
@@ -446,7 +445,9 @@ form input[type="submit"] {
 input, textarea {
   font-size: 30px;
   text-align: center;
-  height: 100px;
+  height: 200px;
+  line-height: 200px;
+  width: 100%;
 }
 .success {
   text-align: center;
