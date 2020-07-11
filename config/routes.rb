@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root to: 'posts#index' #/にアクセスしたらこれでindex画面に飛ばす
   resources :posts do
     resources :comments, only: [:create]
+    # 7つの基本アクション以外(search)は、collectionかmember
+    # collectionはルーティングに:idがつかない、memberは:idがつく
+    # 今回の検索機能の場合、詳細ページのような:idを指定して特定のページにいく必要がないため、collectionを使用してルーティングを設定しましょう。
       collection do
         get 'search'
       end

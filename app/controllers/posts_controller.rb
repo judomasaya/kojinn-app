@@ -3,9 +3,10 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit]
   before_action :move_to_index, except: [:index, :show, :search]
   # indexアクションにアクセスした時、indexアクションへのリダイレクトを繰り返し無限ループが起こるので、
-  # except: :indexを付け加えます。
+  # except:を付け加えます。
   # また、詳細ページへはログインする必要はないものとするために
   # except: [:index, :show]としています。
+  # 未ログイン状態にトップページへリダイレクトされてしまうことを回避するため、before_actionのexceptオプションに:searchを追加しています。
 
   # 42~44行
 
