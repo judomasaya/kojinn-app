@@ -5,13 +5,21 @@ Rails.application.routes.draw do
   devise_for :installs
   root to: 'posts#index' #/にアクセスしたらこれでindex画面に飛ばす
   resources :posts do
-    # resourcesは、7つのアクションをまとめてルーティングの設定ができるので7つのアクション全てを記述した今、only以下は不要
-  # only: [:index, :new, :create, :show, :edit, :update, :destroy]
     resources :comments, only: [:create]
+    # 7つの基本アクション以外(search)は、collectionかmember
+    # collectionはルーティングに:idがつかない、memberは:idがつく
+    # 今回の検索機能の場合、詳細ページのような:idを指定して特定のページにいく必要がないため、collectionを使用してルーティングを設定しましょう。
       collection do
         get 'search'
       end
-  end
+    end
+    # resourcesは、7つのアクションをまとめてルーティングの設定ができるので7つのアクション全てを記述した今、only以下は不要
+  # only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  # コメントには必ずコメント先となる投稿が存在しています。
+  # ネストによって、/tweets/:tweet_id/comments(.:format)となっています。
+  # リンクを飛ばすときは、この:tweet_idのところにコメントと結びつくツイートのidを記述します。
+  # すると、paramsのなかにtweet_idというキーが追加され、コントローラーで扱うことができます。
+  # rails routesにより
   # ルーティングをネストさせる一番の理由はアソシエーション先のレコードのidを
   # paamsに追加してコントローラーに送るためです。
   # 今回の実装だと、コメントと結びつく投稿（ぽすと）のidをparamsに追加しています。

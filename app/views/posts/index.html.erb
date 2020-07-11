@@ -13,17 +13,17 @@
       <section class="fv-section">
         <p class="main-copy"><b>市販薬を共有することで</b>
         </p>
-        <p class="fv-text">１、症状に合うお薬が、来店後すぐに購入できる</p>
-        <p class="fv-text">２、どのお薬がお勧めなのか、すぐにわかる</p>
-        <p class="fv-text">３、薬剤師と登録販売者の知識の違いを、把握できる</p>
+        <p class="fv-text">♦︎自分にベストなお薬を見つける</p>
+        <p class="fv-text">♦︎辛い症状の時も接客は必要なし</p>
+        <p class="fv-text">♦︎お薬の知識の向上にもつながる</p>
         <a href="/posts/new" class="cta-btn">GO</a>
       </section>
     </main>
     <div class= "postContent">
-      <h1>投稿一覧</h1>
+      <h1></h1>
       <%= link_to '1つ戻る', '/posts/new' %>
       <%= form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "症状で検索する", class: "search-input" %>
+        <%= form.text_field :keyword, placeholder: "あなたの辛い症状で検索する", class: "search-input" %>
         <%= form.submit "click!", class: "search-btn" %>
       <% end %>
       <div class="postTitles">

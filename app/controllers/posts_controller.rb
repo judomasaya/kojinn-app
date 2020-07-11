@@ -3,9 +3,10 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit]
   before_action :move_to_index, except: [:index, :show, :search]
   # indexアクションにアクセスした時、indexアクションへのリダイレクトを繰り返し無限ループが起こるので、
-  # except: :indexを付け加えます。
+  # except:を付け加えます。
   # また、詳細ページへはログインする必要はないものとするために
   # except: [:index, :show]としています。
+  # 未ログイン状態にトップページへリダイレクトされてしまうことを回避するため、before_actionのexceptオプションに:searchを追加しています。
 
   # 42~44行
 
@@ -53,13 +54,17 @@ class PostsController < ApplicationController
 
   # 個別詳細ページを表示するリクエストに対応して動く
   def show
-    # @post = Post.find(params[:id])
-    # params[:id]は元々レコードのIDが入っていたので、
-    # IDに該当するレコードの全ての情報をテーブルから取得
-   end
+  @comment = Comment.new
+  @comments = @post.comments.includes(:user)
+  # posts/show.html.erbでform_withを使用して、comments#createにアクション先を飛ばしたいので、
+  # @comment = Comment.newとインスタンス生成をしないといけません。
+  # ビューでは誰のコメントかを明らかにするためアソシを使ってユーザーのレコードを取得
+  # その時に「N+1問題」が発生してしまうので、includesメソッド使用
+# では、コントローラーであるpostsについて投稿されたコメントの全レコードを取得することができたので、これらをビューで表示しましょう。
+  end
 
-   def search
-    @posts = Post.search(params[:keyword])
+  def search
+  @posts = Post.search(params[:keyword])
   end
 
   # 投稿編集ページを表示するリクエストに対応して動く
@@ -82,14 +87,16 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.destroy
     # redirect_to root_path
+  end
 
+  def model_name
   end
 
 
 
   private
   def post_params
-    params.require(:post).permit(:nickname, :title, :content, :age, :name, :allergy, :kusuri, :image).merge(user_id: current_user.id)
+    params.require(:post).permit(:name, :nickname, :title, :content, :age, :allergy, :kusuri, :image).merge(user_id: current_user.id)
     #  うえの(post_params)の答え。カレントはログイン中のidを取得できる。mergeは前後の情報を合体
     # 投稿を保存する際、name、image、textというビューから送られてくる情報に加えて、user_idカラムにログイン中のユーザーのidを保存しなければいけません。
     # そのため、2つのハッシュを統合する時に使うmergeメソッドを利用して、user_idを統合しましょう。
