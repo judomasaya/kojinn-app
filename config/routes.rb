@@ -4,14 +4,14 @@ Rails.application.routes.draw do
   #ログイン機能の　gem deviseを利用する際にはアカウントを作成するためのUserモデルを新しく作成します。
   devise_for :installs
   root to: 'posts#index' #/にアクセスしたらこれでindex画面に飛ばす
+  namespace :posts do
+    resources :searches, only: :index
+  end
   resources :posts do
-    resources :comments, only: [:create]
+    resources :comments, only: [:create,]
     # 7つの基本アクション以外(search)は、collectionかmember
     # collectionはルーティングに:idがつかない、memberは:idがつく
     # 今回の検索機能の場合、詳細ページのような:idを指定して特定のページにいく必要がないため、collectionを使用してルーティングを設定しましょう。
-      collection do
-        get 'search'
-      end
     end
     # resourcesは、7つのアクションをまとめてルーティングの設定ができるので7つのアクション全てを記述した今、only以下は不要
   # only: [:index, :new, :create, :show, :edit, :update, :destroy]

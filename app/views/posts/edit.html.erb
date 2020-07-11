@@ -1,6 +1,6 @@
 <div class="content__title">
   投稿の編集
-  <%= link_to '新規投稿画面へ戻る', '/posts/new' %>
+  <%= link_to 'メインページへ戻る', '/postss/' %>
 </div>
 <%= form_with model: @post, class: :form, local: true do |form| %>
   <%#ajax通信はこのアプリにはないので、それをキャンセルするためにlocal: trueオプション %>
