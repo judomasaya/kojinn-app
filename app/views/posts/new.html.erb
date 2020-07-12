@@ -1,5 +1,5 @@
 <h1>お勧めされたお薬について伺います</h1>
-<%= link_to '1つ戻る', '/posts' %>
+<%= link_to 'メインページに戻る', '/posts' %>
   <div class= "posts">
     <%= form_with model: @post, class: :form, local: true do |form| %>
     <%= render partial: "date", locals: { form: form } %>

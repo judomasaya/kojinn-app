@@ -1,0 +1,15 @@
+<div class= "postContent">
+  <h1>症状検索結果</h1>
+  <%= link_to '投稿一覧に戻る', '/posts' %>
+  </div>
+<div class="postTitles">
+  <% @posts.each do |post| %>
+  <%= render partial: "posts/post", locals: { post: post } %>
+<%# renderメソッドで使用できるオプションです。 partialというオプションを付けることで、
+明示的に部分テンプレート名を指定し、部分テンプレートを表示することができます。
+今回は、_post.html.erbという部分テンプレートを呼び出しています。 %>
+<%# 右側のpostはeachメソッド内の変数としてのpostでpostのインスタンスを示しています。
+左側のpostは部分テンプレート内での変数の名前を表しています。 %>
+  <% end %>
+<%# <%= paginate(@posts)%>
+</div>
