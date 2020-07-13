@@ -97,7 +97,8 @@ a {
 /* ファーストビュー */
 .fv-section {
   height: 600px;
-  background-image: url(kusuri3.jpeg);
+  background: image-url('kusuri3.jpeg') fixed;
+  // background-image: url(kusuri3.jpeg);
   background-size: cover;
   background-position: center;
   display: flex;
