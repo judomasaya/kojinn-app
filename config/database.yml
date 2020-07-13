@@ -48,6 +48,7 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
+
   <<: *default
   database: kojinn-app_production
   username: kojinn-app
