@@ -78,7 +78,7 @@ a {
   box-shadow: 0 7px 0 #d1483e;
   cursor: grab;
   margin-right: 20px;
-  font-size: inherit;
+  font-size: smaller;
   font-weight: bold;
   width: 130px;
   text-decoration: none;
@@ -307,7 +307,7 @@ body{
     margin: 30px auto 0;
     background-color:currentColor;
     // height: 100%;
-    padding: 150px;
+    padding: 30px;
     .back {
       margin-bottom: 40px;
     }
@@ -320,7 +320,7 @@ body{
       margin: 20px;
       &__left{
         padding-right: 20px;
-        margin: 20px;
+        margin: 20px;  
         &--image{
           height: 55px;
           width: 55px;
@@ -502,10 +502,16 @@ body{
     padding: 15px 30px;
   }
 }
-.postImage {
-  // padding: 300px ;
-  background-size: cover;
-  background-position: center center;
+
+.image {
+  height: 100vh;
+  background-color: aqua;
+  .postImage {
+    // padding: 300px ;
+    background-size: cover;
+    background-position: center center;
+    height: inherit;
+  }
 }
 .actions {
   padding: 30px 0;

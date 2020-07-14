@@ -3,8 +3,8 @@
 </div >
 <div class="postTitle">
 
-  <h1>辛い症状『<%= @post.name %>』</h1>
-  <h2> 店員さんにお勧めされたお薬：<%= @post.nickname%></h2>
+  <h1>接客内容『<%= @post.name %>』</h1>
+  <h2> 私がお勧めしたお薬：<%= @post.nickname%></h2>
 </div>
 <% if user_signed_in? && current_user.id == @post.user_id %>　
 <%# ①ログインしてます？　　②ログインしているユーザー　と　投稿したユーザーが一致してます？ それなら編集・削除して良いですよ %>
@@ -36,17 +36,19 @@
     <%= simple_format @post.kusuri %>
     <%# simple_formatは投稿時に改行を含むデータを送信したときに、その改行を反映してくれる役割が %>
   </div>
-  <h2>症状の具体的な説明</h2>
+  <h2>症状の具体的な説明　&　お勧めした理由</h2>
   <div class="postText">
   　　<%= simple_format @post.title %>
   </div>
   <h2>画像</h2>
+  <div class="image">
     <div class="postImage" style="background-image:url(<%= @post.image %>);">
+    </div>
   </div>
     <div class="container">
       <% if current_user %>
         <%= form_with(model: [@post, @comment], local: true) do |form| %>
-          <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+          <%= form.text_area :text, placeholder: "薬剤師にコメントする", rows: "2" %>
           <%= form.submit "SEND" %>
         <% end %>
       <% else %>

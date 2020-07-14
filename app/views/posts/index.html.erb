@@ -11,11 +11,11 @@
 <div class="wrapper">
   <main>
     <section class="fv-section">
-    <p class="main-copy"><b>市販薬を共有することで</b>
+    <p class="main-copy"><b>アプリの目的</b>
     </p>
-    <p class="fv-text">♦︎自分にベストなお薬を見つける</p>
-    <p class="fv-text">♦︎辛い症状の時も接客は必要なし</p>
-    <p class="fv-text">♦︎お薬の知識の向上にもつながる</p>
+    <p class="fv-text">♦︎薬剤師がお薬を接客をした際、その内容を随時記載していく</p>
+    <p class="fv-text">♦︎接客内容を記載し公表することで、</p>
+    <p class="fv-text">全国の登録販売者・お客様のお薬の知識の向上を目指す</p>
     <a href="/posts/new" class="cta-btn">GO</a>
     </section>
   </main>
@@ -23,7 +23,7 @@
     <h1></h1>
     <%# <%= link_to '1つ戻る', '/posts/new' %> 
     <%= form_with(url: posts_searches_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "あなたの辛い症状で検索する", class: "search-input" %>
+    <%= form.text_field :keyword, placeholder: "学びたい症状を入力", class: "search-input" %>
     <%= form.submit "click!", class: "search-btn" %>
     <% end %>
     <div class="postTitles">
@@ -39,6 +39,7 @@
     </div>
   </div>
   <footer>
-    <small>kojinn2 all rights reserved</small>
+    <small>I want to change drugstore with this app
+</small>
   </footer>
 </div>
