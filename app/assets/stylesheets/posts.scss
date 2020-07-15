@@ -63,12 +63,21 @@
 }
 /* ヘッダー */
 header {
-  padding: 10px;
+  padding: 30px;
   background-color:darkblue;
-  height: 80px;
-  display: flex;
+  // height: 80px;
+  // display: flex;
   justify-content: space-between;
   align-items: center;
+  .titles {
+    display: flex;
+    .title {
+      padding: 0 0 0 30px;
+  }
+    nav {
+      padding: 90px 0 0 180px;
+  }
+}
 }
 a {
   color: white;
@@ -96,7 +105,7 @@ a {
 }
 /* ファーストビュー */
 .fv-section {
-  height: 600px;
+  // height: 600px;
   background: image-url('kusuri3.jpeg') fixed;
   // background-image: url(kusuri3.jpeg);
   background-size: cover;
@@ -116,7 +125,7 @@ a {
 }
 .cta-btn {
   display: inline-block;
-  width: 540px;
+  width: 300px;
   padding: 10px 0;
   text-align: center;
   font-size: 50px;
@@ -125,7 +134,7 @@ a {
   background-color:red;
   border-radius: 60px;
   box-shadow: 0 5px 0 #d1483e;
-  margin-top: 50px;
+  margin: 50px;
 
 }
 .cta-btn:hover {
@@ -207,7 +216,7 @@ label {
 h1{
   color:white;
   font-size: 80px;
-  text-align: center;
+  // text-align: center;
 }
 h2{
   padding: 0 60px;
@@ -268,8 +277,15 @@ a:hover {
 body{
   background-color: black;
   min-width: 650px;
+  .title {
+    margin: top -40px;
+    text-align: center;
+    h1{
+      color: white;
+      font-size: 150px;
+    }
+  }
   .content{
-
     &__right{
       font-size: medium;
     }
@@ -283,6 +299,7 @@ body{
       font-size: 30px;
       line-height: 56px;
       padding: 0 0 0 30px;
+      margin-top: -40px;
       &--text{
         text-decoration: none;
         color: #fff;
@@ -301,8 +318,8 @@ body{
     }
   }
   .title{
-    padding: 80px 0 0 20px;
-  } 
+      margin: top -40px;
+  }
   .contents{
     margin: 30px auto 0;
     background-color:currentColor;

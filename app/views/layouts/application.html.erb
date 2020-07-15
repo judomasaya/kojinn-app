@@ -1,52 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>KojinnApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%# application.html.erbのstylesheet_link_tagの部分にapplicationと書いてあるので、このHTMLからはapp/assets/stylesheets/application.cssというCSSファイルを読み込むことを示しています。 %>
-
-
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
-    <header>
-      <div class="title">
-        <h1>
-          <%= link_to "薬剤師の知識共有アプリ", '/posts', class: "postTitle" %>
-        </h1>
-      </div>
-      <nav>
-        <ul class="header-links">
-          <%# <li class="header-link"><a href="https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/0000180831.pdf">世界一分かりやすいお薬の知識</a></li> %>
-          <li class="header-link"><a href="https://www.kusurinomadoguchi.com/near">処方箋受付が可能な薬局を探す</a></li>
-          <li class="header-link"><a href="https://pharmacy-search.jp/">近隣のドラッグストアを探す</a></li>
-          <li class="header-link"><a href="https://www.nttdocomo.co.jp/service/okusuri_link/">お薬手帳リンクサービス</a></li>
-        </ul>
-      </nav>
-    </header>
-    
-    <header class="header">
+  <header>
+    <%# <div class="titles"> %>
+    <nav>
+      <ul class="header-links">
+        <%# <li class="header-link"><a href="https://www.mhlw.go.jp/file/06-Seisakujouhou-11120000-Iyakushokuhinkyoku/0000180831.pdf">世界一分かりやすいお薬の知識</a></li> %>
+        <li class="header-link"><a href="https://www.kusurinomadoguchi.com/near">処方箋受付が可能な薬局を探す</a></li>
+        <li class="header-link"><a href="https://pharmacy-search.jp/">近隣のドラッグストアを探す</a></li>
+        <li class="header-link"><a href="https://www.nttdocomo.co.jp/service/okusuri_link/">お薬手帳リンクサービス</a></li>
+      </ul>
+    </nav>
+    <div class="title">
+      <h1>
+      <%= link_to "薬剤師の知識共有アプリ", '/posts', class: "postTitle" %>
+      </h1>
+    </div>
+    <%# </div> %>
+    <div class="header">
       <div class="header__title">
-      </div>
+        </div>
       <div class="header__right">
- 
         <% if user_signed_in? %>
-          ログイン名：<%= link_to current_user.nickname, user_path(current_user), class: "header__right--btn" %>の投稿一覧
-          <%= link_to "新規投稿", new_post_path, class: "header__right--btn" %>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn" %>
+        ログイン名：<%= link_to current_user.nickname, user_path(current_user), class: "header__right--btn" %>の投稿一覧
+        <%= link_to "新規投稿", new_post_path, class: "header__right--btn" %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn" %>
         <% else %>
-          <%= link_to "ログイン", new_user_session_path, class: "header__right--btn" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "header__right--btn" %>
+        <%= link_to "ログイン", new_user_session_path, class: "header__right--btn" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "header__right--btn" %>
         <% end %>
-
       </div>
-    </header>
+    </div>
+  </header>
     <div class="contents">
       <%= yield %>
     </div>
-  </body>
 </html>
 
 
