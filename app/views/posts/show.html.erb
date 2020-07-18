@@ -5,6 +5,10 @@
 
   <h1>接客内容『<%= @post.name %>』</h1>
   <h2> 私がお勧めしたお薬：<%= @post.nickname%></h2>
+  <div class="image">
+    <div class="postImage" style="background-image:url(<%= @post.image %>);">
+    </div>
+  </div>
 </div>
 <% if user_signed_in? && current_user.id == @post.user_id %>　
 <%# ①ログインしてます？　　②ログインしているユーザー　と　投稿したユーザーが一致してます？ それなら編集・削除して良いですよ %>
@@ -15,40 +19,42 @@
   </div>
 <% end %>
 <div class="post">
-  <h2>投稿時間</h2>
-    <div class="postDate">
-      <%= @post.created_at %>
-    </div>
-  <h2>年齢</h2>
-    <div class="postDate">
-      <%= @post.age %>歳
-    </div>
-  <h2>発症時期</h2>
-    <div class="postDate">
-      <%= @post.content %>
-    </div>
-  <h2>アレルギー・喘息の有無</h2>
-    <div class="postDate">
-      <%= @post.allergy %>
-    </div>
-  <h2>現在服用中のお薬</h2>
-  <div class="postDate">
-    <%= simple_format @post.kusuri %>
-    <%# simple_formatは投稿時に改行を含むデータを送信したときに、その改行を反映してくれる役割が %>
+  <div class="postside">
+    <h2>投稿時間</h2>
+      <div class="postDate">
+        <%= @post.created_at %>
+      </div>
+      <div class="postage">
+        <h2>年齢</h2>
+        <div class="postDate">
+          <%= @post.age %>歳
+        </div>
+      </div>
   </div>
+  <div class="postside2">
+    <h2>発症時期</h2>
+      <div class="postDate">
+        <%= @post.content %>
+      </div>
+    <h2>アレルギー・喘息の有無</h2>
+      <div class="postDate">
+        <%= @post.allergy %>
+      </div>
+  </div>
+    <h2>現在服用中のお薬</h2>
+    <div class="postDate">
+      <%= simple_format @post.kusuri %>
+      <%# simple_formatは投稿時に改行を含むデータを送信したときに、その改行を反映してくれる役割が %>
+    </div>
   <h2>症状の具体的な説明　&　お勧めした理由</h2>
   <div class="postText">
   　　<%= simple_format @post.title %>
   </div>
-  <h2>画像</h2>
-  <div class="image">
-    <div class="postImage" style="background-image:url(<%= @post.image %>);">
-    </div>
-  </div>
+  <h2>薬剤師への質問コーナー</h2>
     <div class="container">
       <% if current_user %>
         <%= form_with(model: [@post, @comment], local: true) do |form| %>
-          <%= form.text_area :text, placeholder: "薬剤師に質問する", rows: "2" %>
+          <%= form.text_area :text, placeholder: "コメントする", rows: "3" %>
           <%= form.submit "SEND" %>
         <% end %>
       <% else %>

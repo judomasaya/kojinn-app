@@ -425,6 +425,17 @@ body{
       font-weight: bold;
       color:red;
     }
+    .postside {
+      display: flex;
+      padding: 100px 0 0 0;
+    }
+    .postside2  {
+      display: flex;
+    }
+    .postage {
+      display: flex;
+      padding: 0 0 100px 284px;
+    }
     .postDate {
       font-size: 25px;
       text-align: center;
@@ -432,6 +443,8 @@ body{
       // height: 5px;
       line-height: 70px;
       background: white;
+      height: 100px;
+      width: 400px;
     }
     .postManage{
       display: flex;
@@ -522,13 +535,16 @@ body{
 }
 
 .image {
-  height: 100vh;
-  background-color: aqua;
+  // height: 100vh;
+  // background-color: aqua;
   .postImage {
     // padding: 300px ;
     background-size: cover;
     background-position: center center;
     height: inherit;
+    height: 200px;
+    width: 200px;
+    display: inline-flex;
   }
 }
 .actions {
