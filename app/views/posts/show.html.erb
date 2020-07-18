@@ -48,7 +48,7 @@
     <div class="container">
       <% if current_user %>
         <%= form_with(model: [@post, @comment], local: true) do |form| %>
-          <%= form.text_area :text, placeholder: "薬剤師にコメントする", rows: "2" %>
+          <%= form.text_area :text, placeholder: "薬剤師に質問する", rows: "2" %>
           <%= form.submit "SEND" %>
         <% end %>
       <% else %>
