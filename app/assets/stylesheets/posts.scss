@@ -249,6 +249,10 @@ body{
     margin: 30px auto 0;
     background-color:currentColor;
     height: 100%;
+    // background-color:currentColor;
+    background: cadetblue;
+
+    // height: 100%;
     padding: 30px;
     .content{
       padding: 60px;
@@ -308,6 +312,22 @@ body{
       font-size: 40px;
       font-weight: bold;
       color:red;
+    }
+    .postside {
+      display: flex;
+      padding: 100px 0 0 0;
+    }
+    .postside2  {
+      display: flex;
+      padding: 100px 0 0 0;
+    }
+    .postside3  {
+      display: flex;
+      padding: 100px 0 0 0;
+    }
+    .postage {
+      display: flex;
+      padding: 0 0 100px 284px;
     }
     .postDate {
       font-size: 25px;
