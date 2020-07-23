@@ -3,11 +3,13 @@
   // width: 40%;
   margin-top: 30px;
   // padding: 150px;
+
 }
+
 .postContent{
   padding: 200px 0 200px 0;
-  background-color: #424080;
-  form input[type="submit"] {
+
+  background-color: lightpink;  form input[type="submit"] {
     background-color:red;
     border-radius: 20px;
     color: #fff;
@@ -65,8 +67,7 @@
 /* ヘッダー */
 header {
   padding: 30px;
-  background-color:darkblue;
-  // height: 80px;
+  background-color: lightpink;  // height: 80px;
   // display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,11 +75,11 @@ header {
     display: flex;
     .title {
       padding: 0 0 0 30px;
-  }
+    }
     nav {
       padding: 90px 0 0 180px;
+      }
   }
-}
 }
 a {
   color: white;
@@ -154,8 +155,8 @@ a {
   margin-bottom: 40px;
   height: 300px;
   line-height: 300px;
-  background: darkblue;
-}
+
+  background-color: lightpink;}
 .card-list {
   justify-content: space-between;
 }
@@ -179,8 +180,8 @@ a {
 footer {
   line-height: 80px;
   text-align: center;
-  background-color: darkblue;
-  color:white;
+
+  background-color: lightpink;  color:white;
   font-size: xx-large;
 }
 b {
@@ -228,8 +229,8 @@ h2{
 }
 h3{
   color:white;
-  background-color:darkblue;
-  text-align: center;
+
+  background-color: lightpink;  text-align: center;
   height: 60px;
   line-height: 60px;
   font-size: 30px;
@@ -277,14 +278,13 @@ a:hover {
   box-shadow: 0 0 60px yellow;
 }
 body{
-  background-color: black;
-  min-width: 650px;
+  background-color: lightpink;  min-width: 650px;
   .title {
     margin: top -40px;
     text-align: center;
     h1 {
       color: white;
-      // font-size: 150px;
+      margin: auto;
     }
   }
   .content{
@@ -293,8 +293,8 @@ body{
     }
   }
   .header{
-    background-color:darkblue;
-    color: #fff;
+
+    background-color: lightpink;    color: #fff;
     display: flex;
     justify-content: space-between;
     &__title{
@@ -324,8 +324,7 @@ body{
   }
   .contents{
     margin: 30px auto 0;
-    background-color:currentColor;
-    // height: 100%;
+    background-color: lightpink;    // height: 100%;
     padding: 30px;
     .back {
       margin-bottom: 40px;
@@ -436,7 +435,7 @@ body{
     }
     .postside3  {
       display: flex;
-      padding: 100px 0 100px 300px;
+      padding: 100px 0 100px 0;
     }
     .postage {
       display: flex;
@@ -591,4 +590,13 @@ input, textarea {
   }
   .comment {
     padding: 0px 20px 20px 0;
+}
+
+.post {
+  .h2 {
+    padding: 0 60px;
+    color: white;
+    // background-color: black;
+    font-size: xx-large;
+  }
 }
