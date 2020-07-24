@@ -324,7 +324,7 @@ body{
   }
   .contents{
     margin: 30px auto 0;
-    background-color:currentColor;
+    background-color:aquamarine;
     // height: 100%;
     padding: 30px;
     .back {
@@ -592,3 +592,11 @@ input, textarea {
   .comment {
     padding: 0px 20px 20px 0;
 }
+
+
+// _date
+.agetime {
+  display: flex;
+  padding: 0 0 0 300px;
+}
+

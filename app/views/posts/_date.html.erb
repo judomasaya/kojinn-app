@@ -2,13 +2,15 @@
   <h2>お客様の症状</h2>　
   <%= form.text_area :name, placeholder: "熱・咳・鼻水・喉の痛み", class: :form__name %>
 </div>
-<div class="post">　　
-  <h2>お客様の年齢</h2>　
-  <%= form.number_field :age, placeholder: "↓↑", class: :form__age, min: 1, max: 150 %>
-</div>
-<div class="post">　　
-  <h2>発症時期</h2>　
-  <%= form.datetime_field :content, {start_year: 1990, end_year: 2100} %>
+<div class="agetime">
+  <div class="post">　　
+    <h2>お客様の年齢</h2>　
+    <%= form.number_field :age, placeholder: "↓↑", class: :form__age, min: 1, max: 150 %>
+  </div>
+  <div class="post">　　
+    <h2>発症時期</h2>　
+    <%= form.datetime_field :content, {start_year: 1990, end_year: 2100} %>
+  </div>
 </div>
 <div class="post">
   <h2>アレルギー・喘息の有無</h2>　
