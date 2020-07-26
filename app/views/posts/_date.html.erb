@@ -1,30 +1,31 @@
-<div class="">
-<div class="posts1">
-  <div class="post">　　
-    <h2>お客様の症状</h2>　
-    <%= form.text_area :name, placeholder: "熱・咳・鼻水・喉の痛み", class: :form__name %>
+<div class="date">
+  <div class="posts1">
+    <div class="post">　　
+      <h2>お客様の症状</h2>　
+      <%= form.text_area :name, placeholder: "熱・咳・鼻水・喉の痛み", class: :form__name %>
+    </div>
+    <div class="post">　　
+      <h2>お客様の年齢</h2>　
+      <%= form.number_field :age, placeholder: "↓↑", class: :form__age, min: 1, max: 150 %>
+    </div>
+    <div class="post">　　
+      <h2>発症時期</h2>　
+      <%= form.datetime_field :content, {start_year: 1990, end_year: 2100} %>
+    </div>
   </div>
-  <div class="post">　　
-    <h2>お客様の年齢</h2>　
-    <%= form.number_field :age, placeholder: "↓↑", class: :form__age, min: 1, max: 150 %>
-  </div>
-  <div class="post">　　
-    <h2>発症時期</h2>　
-    <%= form.datetime_field :content, {start_year: 1990, end_year: 2100} %>
-  </div>
-</div>
-<div class="posts2">
-  <div class="post">
-    <h2>アレルギー・喘息の有無</h2>　
-    <%= form.text_area :allergy,placeholder: "例：牛乳アレルギー、喘息有り", class: :form__name %>
-  </div>
-  <div class="post">
-    <h2>現在服用しているお薬</h2>　
-    <%= form.text_area :kusuri, placeholder: "例：ロキソニン・高血圧のお薬・血液をサラサラにするお薬", class: :form__name %>
-  </div>
-  <div class="post">　　
-    <h2>お勧めをしたお薬</h2>　
-    <%= form.text_area :nickname, placeholder: "AI　太郎", class: :form__name %>
+  <div class="posts2">
+    <div class="post">
+      <h2>アレルギー・喘息の有無</h2>　
+      <%= form.text_area :allergy,placeholder: "例：牛乳アレルギー、喘息有り", class: :form__name %>
+    </div>
+    <div class="post">
+      <h2>現在服用しているお薬</h2>　
+      <%= form.text_area :kusuri, placeholder: "例：ロキソニン・高血圧のお薬・血液をサラサラにするお薬", class: :form__name %>
+    </div>
+    <div class="post">　　
+      <h2>お勧めをしたお薬</h2>　
+      <%= form.text_area :nickname, placeholder: "AI　太郎", class: :form__name %>
+    </div>
   </div>
 </div>
 <div class="post">　　

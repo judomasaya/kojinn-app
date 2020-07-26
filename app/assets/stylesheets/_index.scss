@@ -1,0 +1,135 @@
+.wrapper {
+  height: 500px;
+  width: 100%;
+}
+
+
+
+/* ファーストビュー */
+.fv-section {
+  // height: 600px;
+  background: image-url('kusuri3.jpeg') fixed;
+  // background-image: url(kusuri3.jpeg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.main-copy {
+  font-size: 120px;
+  color:black ;
+}
+.fv-text {
+  font-size: 40px;
+  margin-top: 10px;
+}
+.cta-btn {
+  display: inline-block;
+  width: 300px;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 50px;
+  color: #fff;
+  text-decoration: none;
+  background-color:red;
+  border-radius: 60px;
+  box-shadow: 0 5px 0 #d1483e;
+  margin: 50px;
+
+}
+.cta-btn {
+  box-shadow: 0 10px 0 #d1483e;
+}
+.cta-btn:hover {
+  box-shadow: 0 0 60px yellow;
+}
+
+
+
+
+//メインページの投稿一覧
+.content{
+  // padding: 60px;
+  border-bottom: 1px solid #f6f6f6;
+  display: flex;
+  border: solid;
+  display: inline-grid;
+  margin: 20px;
+  &__left{
+    padding-right: 20px;
+    margin: 20px;  
+    &--image{
+      height: 55px;
+      width: 55px;
+      border: solid 20px;
+      color: teal;
+    }
+  }
+  &__right{
+    width: calc(100%-100px);
+    &__top{
+      a {
+        color: white;
+        border-radius: 27px;
+        background-color: red;
+        padding: 20px 40px 20px 40px;
+        box-shadow: 0 7px 0 #d1483e;
+        cursor: grab;
+        margin-right: 20px;
+        font-size: inherit;
+        font-weight: bold;
+        width: 130px;
+        text-decoration: none;
+      }
+      font-size: 20px;
+      font-weight: bold;
+      &--title{
+        text-decoration: none;
+        color:white;
+        box-shadow: 0 10px 0 #d1483e;
+      }
+    }
+    &__bottom{
+      // font-size: 15px;
+      color: #999;
+      // display: flex;
+      margin: 40px;
+      &--userName{
+        a {
+          color: white;
+          border-radius: 27px;
+          background-color: red;
+          padding: 10px 30px 10px 30px;
+          box-shadow: 0 7px 0 #d1483e;
+          cursor: grab;
+          margin-right: 20px;
+          font-size: inherit;
+          font-weight: bold;
+          width: 130px;
+          text-decoration: none;
+        }
+        &--btn{
+          text-decoration: none;
+          color: white;
+          box-shadow: 0 10px 0 #d1483e;
+        }
+      }
+      &--date{
+        margin-left: 20px;
+      }
+      &--date{
+        margin: 30px;
+      }
+    }
+  }
+}
+
+
+.postContent {
+  .search-btn:hover {
+    box-shadow: 0 0 60px yellow;
+    opacity: 0.4;
+  }
+}

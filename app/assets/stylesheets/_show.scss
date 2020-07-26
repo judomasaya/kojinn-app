@@ -1,0 +1,106 @@
+
+
+.postTitle{
+  padding: 20px 0;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  // color:red;
+  border: solid 30px;
+}
+
+
+.image {
+  // height: 100vh;
+  // background-color: aqua;
+  .postImage {
+    // padding: 300px ;
+    background-size: cover;
+    background-position: center center;
+    height: inherit;
+    height: 200px;
+    width: 200px;
+    display: inline-flex;
+    background-color: white;
+  line-height: 200px;
+  font-size: 20px;
+
+  }
+}
+
+
+.postside {
+  display: flex;
+  padding: 100px 0 0 0;
+}
+.postside2  {
+  display: flex;
+  // padding: 100px 0 0 0;
+}
+.postside3  {
+  display: flex;
+  padding: 100px 0 100px 300px;
+}
+.postage {
+  display: flex;
+  padding: 0 0 100px 284px;
+}
+.postDate {
+  font-size: 25px;
+  text-align: center;
+  border: solid;
+  // height: 5px;
+  line-height: 70px;
+  background: white;
+  height: 100px;
+  width: 400px;
+}
+.postText{
+  font-size: 25px;
+  text-align: center;
+  padding: 0 0 70px 0;
+  border: solid;
+  line-height: 70px;
+  background: white;
+}
+
+
+
+
+
+
+
+
+
+
+.container{
+  form input[type="submit"] {
+    background-color:deepskyblue;
+    border-radius: 20px;
+    color: #fff;
+    border: 0;
+    height: 70px;
+    font-size: 40px;
+    font-weight: bold;
+    box-shadow: 0 7px 0 #d1483e;
+    cursor: grab;
+    line-height: 70px;
+  }
+    input, textarea {
+      font-size: 30px;
+      text-align: center;
+      height: 200px;
+      line-height: 200px;
+      width: 100%;
+    }
+  }
+
+
+  .comments {
+    color: black;
+    background: white;
+    font-size: x-large;
+    }
+    .comment {
+      padding: 0px 20px 20px 0;
+  }

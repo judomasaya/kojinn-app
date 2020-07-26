@@ -1,0 +1,73 @@
+/* ヘッダー */
+header {
+  padding: 30px;
+  background-color:darkblue;
+  // height: 80px;
+  // display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .titles {
+    display: flex;
+    .title {
+      padding: 0 0 0 30px;
+  }
+    nav {
+      padding: 90px 0 0 180px;
+  }
+}
+}
+
+.header-links {
+  list-style: none;
+}
+.header-link {
+  margin-left: 30px;
+  cursor: pointer;
+  padding: 30px;
+  display: contents;
+}
+
+.header{
+  background-color:darkblue;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  &__title{
+    font-size: 30px;
+    line-height: 56px;
+    padding: 0 0 0 30px;
+    margin-top: -40px;
+    &--text{
+      text-decoration: none;
+      color: #fff;
+      box-shadow: 0 10px 0 #d1483e;
+    }
+  }
+  &__right{
+    padding: inherit;
+    &--btn{
+      text-decoration: none;
+      line-height: 56px;
+      color: #fff;
+      margin-left:15px;
+      box-shadow: 0 10px 0 #d1483e;
+    }
+  }
+}
+
+.header__right--btn:hover {
+  box-shadow: 0 0 60px yellow;
+  opacity: 0.4;
+}
+
+.header__title--text:hover {
+  opacity: 0.4;
+  box-shadow: 0 0 60px yellow;
+}
+
+
+//リンクとタイトルのホバー
+a:hover {
+  box-shadow: 0 0 60px yellow;
+  opacity: 0.4;
+}

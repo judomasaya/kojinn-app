@@ -25,7 +25,7 @@
   </main>
   <div class= "postContent">
     <h1></h1>
-    <%# <%= link_to '1つ戻る', '/posts/new' %> 
+    <%# <%= link_to '1つ戻る', '/posts/new' %>
     <%= form_with(url: posts_searches_path, local: true, method: :get, class: "search-form") do |form| %>
     <%= form.text_field :keyword, placeholder: "学びたい症状を入力", class: "search-input" %>
     <%= form.submit "click!", class: "search-btn" %>

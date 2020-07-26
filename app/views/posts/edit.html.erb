@@ -1,7 +1,7 @@
 <div class="content__title">
-  投稿の編集
-  <%= link_to 'メインページへ戻る', '/postss/' %>
+  <%= link_to 'メインページへ戻る', '/posts/' %>
 </div>
+  <h3>投稿の編集画面</h3>
 <%= form_with model: @post, class: :form, local: true do |form| %>
   <%#ajax通信はこのアプリにはないので、それをキャンセルするためにlocal: trueオプション %>
 <%= render partial: "date", locals: { form: form } %>

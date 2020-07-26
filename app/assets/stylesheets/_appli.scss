@@ -1,0 +1,54 @@
+//yieldを使用し全体に反映されている
+.contents{
+  margin: 30px auto 0;
+  background-color:aquamarine;
+  // height: 100%;
+  padding: 30px;
+  .back {
+    margin-bottom: 40px;
+  }
+}
+body{
+  background-color:greenyellow;
+  min-width: 650px;
+  .title {
+    margin: top -40px;
+    text-align: center;
+    h1 {
+      color: white;
+      margin: auto;
+    }
+  }
+  .content{
+    &__right{
+      font-size: medium;
+    }
+  }
+  .title{
+      margin: top -40px;
+  }
+  &__title{
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 30px;
+    text-align: center;
+  }
+.user{
+padding: 15px 30px;
+}
+}
+
+//情報フォームを入力する欄
+input, textarea {
+  font-size: 30px;
+  text-align: center;
+  // height: 100px;
+  padding: 0 20px;
+  // margin-left: 30px;
+}
+
+
+//ページネーション の上下の空白
+nav.pagination {
+  padding: inherit;
+}
