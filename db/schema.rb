@@ -29,6 +29,9 @@ ActiveRecord::Schema.define(version: 2020_04_02_105655) do
     t.text "allergy"
     t.text "kusuri"
     t.text "image"
+    t.text "sex"
+    t.text "onset"
+    t.text "asthma"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
