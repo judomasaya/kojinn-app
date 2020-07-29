@@ -1,42 +1,42 @@
 <div class="date">
   <div class="posts1">
     <div class="post">　　
-      <h2>症状</h2>　
+      <h2>①症状</h2>　
       <%= form.text_area :name, placeholder: "熱・あせも・下痢など", class: :form__name %>
     </div>
     <div class="post">　　
-      <h2>性別</h2>　
+      <h2>❷性別</h2>　
       <%= form.text_area :sex, placeholder: "男性・女性", class: :form__name %>
     </div>
     <div class="post">　　
-      <h2>年齢</h2>　
+      <h2>③年齢</h2>　
       <%= form.number_field :age, placeholder: "↓↑", class: :form__age, min: 0, max: 150 %>
     </div>
     <div class="post">　　
-      <h2>時期</h2>　
+      <h2>❹時期</h2>　
       <%= form.text_area :onset, placeholder: "１週間前から", class: :form__name %>
     </div>
   </div>
   <div class="posts2">
     <div class="post">
-      <h2>アレルギー</h2>　
+      <h2>⑤アレルギー</h2>　
       <%= form.text_area :allergy,placeholder: "牛乳アレルギーなど記載", class: :form__name %>
     </div>
     <div class="post">　　
-      <h2>喘息</h2>　
+      <h2>❻喘息</h2>　
       <%= form.text_area :asthma, placeholder: "あり・なし", class: :form__name %>
     </div>
     <div class="post">
-      <h2>画像</h2>　
+      <h2>⑦画像</h2>　
       <%= form.text_area :image, placeholder: "その部位の写真", class: :form__name %>
     </div>
 </div>
     <div class="post">
-      <h2>現在服用しているお薬</h2>　
+      <h2>❽現在服用しているお薬</h2>　
       <%= form.text_area :kusuri, placeholder: "例：ロキソニン・高血圧のお薬・血液をサラサラにするお薬", class: :form__name %>
     </div>
 <div class="post">　　
-  <h2>具体的な症状の説明をお願い致します</h2>　
+  <h2>⑨具体的な症状の説明をお願い致します</h2>　
   <%= form.text_area :title, placeholder: "例：熱が特にひどく、喉も痛いです。私はコロナなのでしょうか？", class: :form__title,rows: "7"%>
 </div>
 <%= form.submit "投稿", class: :form__btn %>
