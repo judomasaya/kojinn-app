@@ -1,39 +1,44 @@
 <div class="date">
   <div class="posts1">
     <div class="post">　　
-      <h2>お客様の症状</h2>　
-      <%= form.text_area :name, placeholder: "熱・咳・鼻水・喉の痛み", class: :form__name %>
+      <h2>症状</h2>　
+      <%= form.text_area :name, placeholder: "熱・あせも・下痢など", class: :form__name %>
     </div>
     <div class="post">　　
-      <h2>お客様の年齢</h2>　
-      <%= form.number_field :age, placeholder: "↓↑", class: :form__age, min: 1, max: 150 %>
+      <h2>性別</h2>　
+      <%= form.text_area :sex, placeholder: "男性・女性", class: :form__name %>
     </div>
     <div class="post">　　
-      <h2>発症時期</h2>　
-      <%= form.datetime_field :content, {start_year: 1990, end_year: 2100} %>
+      <h2>年齢</h2>　
+      <%= form.number_field :age, placeholder: "↓↑", class: :form__age, min: 0, max: 150 %>
+    </div>
+    <div class="post">　　
+      <h2>時期</h2>　
+      <%= form.text_area :onset, placeholder: "１週間前から", class: :form__name %>
     </div>
   </div>
   <div class="posts2">
     <div class="post">
-      <h2>アレルギー・喘息の有無</h2>　
-      <%= form.text_area :allergy,placeholder: "例：牛乳アレルギー、喘息有り", class: :form__name %>
+      <h2>アレルギー</h2>　
+      <%= form.text_area :allergy,placeholder: "牛乳アレルギーなど記載", class: :form__name %>
     </div>
+    <div class="post">　　
+      <h2>喘息</h2>　
+      <%= form.text_area :asthma, placeholder: "あり・なし", class: :form__name %>
+    </div>
+    <div class="post">
+      <h2>画像</h2>　
+      <%= form.text_area :image, placeholder: "その部位の写真", class: :form__name %>
+    </div>
+</div>
     <div class="post">
       <h2>現在服用しているお薬</h2>　
       <%= form.text_area :kusuri, placeholder: "例：ロキソニン・高血圧のお薬・血液をサラサラにするお薬", class: :form__name %>
     </div>
-    <div class="post">　　
-      <h2>お勧めをしたお薬</h2>　
-      <%= form.text_area :nickname, placeholder: "AI　太郎", class: :form__name %>
-    </div>
-  </div>
-</div>
 <div class="post">　　
-  <h2>具体的な症状の説明　&　お勧めした理由</h2>　
-  <%= form.text_area :title, placeholder: "例：熱が特にひどく、喉も痛いです。私はコロナなのでしょうか？", class: :form__title,rows: "４"%>
-</div>
-<div class="post">
-  <h2>画像</h2>　
-  <%= form.text_area :image, placeholder: "例：お薬手帳・症状の部位・ネットから似ている症状の写真の引用", class: :form__title %>
+  <h2>具体的な症状の説明をお願い致します</h2>　
+  <%= form.text_area :title, placeholder: "例：熱が特にひどく、喉も痛いです。私はコロナなのでしょうか？", class: :form__title,rows: "7"%>
 </div>
 <%= form.submit "投稿", class: :form__btn %>
+
+

@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  validates :name, :age, :title, :allergy, presence: true
+  validates :name, :age, :onset, :title, :allergy, presence: true
 
   belongs_to :user
   has_many :comments

@@ -11,6 +11,9 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.text :allergy
       t.text :kusuri
       t.text :image
+      t.text :sex
+      t.text :onset
+      t.text :asthma
       t.timestamps
     end
   end

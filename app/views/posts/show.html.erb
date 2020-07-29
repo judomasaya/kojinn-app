@@ -3,12 +3,8 @@
 </div >
 <div class="postTitle">
 
-  <h1>接客内容『<%= @post.name %>』</h1>
-  <h2> 私がお勧めしたお薬：<%= @post.nickname%></h2>
-  <div class="image">
-    <div class="postImage" style="background-image:url(<%= @post.image %>);">
-    </div>
-  </div>
+  <h1>お困りの症状『<%= @post.name %>』</h1>
+  <%# <> 私がお勧めしたお薬：<%= @post.nickname%>
 </div>
 <% if user_signed_in? && current_user.id == @post.user_id %>　
 <%# ①ログインしてます？　　②ログインしているユーザー　と　投稿したユーザーが一致してます？ それなら編集・削除して良いですよ %>
@@ -18,41 +14,54 @@
     <%# <%= link_to "1つ戻る",'Create', 'posts_path'なぜかトップに行っちゃう %>
   </div>
 <% end %>
-<div class="post">
-  <div class="postside">
-    <h2>投稿時間</h2>
-      <div class="postDate">
-        <%= @post.created_at %>
-      </div>
-      <div class="postage">
-        <h2>年齢</h2>
-        <div class="postDate">
-          <%= @post.age %>歳
-        </div>
-      </div>
-  </div>
-  <div class="postside2">
-    <h2>発症時期</h2>
-      <div class="postDate">
-        <%= @post.content %>
-      </div>
-    <h2>アレルギー・喘息の有無</h2>
-      <div class="postDate">
-        <%= @post.allergy %>
-      </div>
-  </div>
-  <div class="postside3">
-    <h2>現在服用中のお薬</h2>
-    <div class="postDate">
-      <%= simple_format @post.kusuri %>
-      <%# simple_formatは投稿時に改行を含むデータを送信したときに、その改行を反映してくれる役割が %>
+
+<div class="date">
+  <div class="posts1">
+    <div class="post">　　
+      <h2>症状</h2>　
+      <%= @post.name %>
+    </div>
+    <div class="post">　　
+      <h2>性別</h2>　
+      <%= @post.sex %>
+
+    </div>
+    <div class="post">　　
+      <h2>年齢</h2>　
+      <%= @post.age %>歳
+    </div>
+    <div class="post">　　
+      <h2>発症時期</h2>　
+        <%= @post.onset %>
     </div>
   </div>
-  <h2>症状の具体的な説明　&　お勧めした理由</h2>
-  <div class="postText">
+  <div class="posts2">
+    <div class="post">
+      <h2>アレルギー詳細</h2>　
+      <%= @post.allergy %>
+    </div>
+    <div class="post">　　
+      <h2>喘息</h2>　
+      <%= @post.asthma%>
+    </div>
+    <div class="post">
+      <h2>画像</h2>　
+        <div class="image">
+    <div class="postImage" style="background-image:url(<%= @post.image %>);">
+    </div>
+    </div>
+    </div>
+</div>
+    <div class="post">
+      <h2>現在服用しているお薬</h2>　
+            <%= simple_format @post.kusuri %>
+    </div>
+<div class="post">　　
+  <h2>具体的な症状の説明をお願い致します</h2>　
   　　<%= simple_format @post.title %>
-  </div>
-  <h2>薬剤師への質問コーナー</h2>
+</div>
+<div class="chat">
+  <h2>薬剤師とチャット</h2>
     <div class="container">
       <% if current_user %>
         <%= form_with(model: [@post, @comment], local: true) do |form| %>
@@ -62,9 +71,11 @@
       <% else %>
         <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
       <% end %>
+    </div>
+  </div>
 
     <div class="comments">
-      <h4>＜コメント一覧＞</h4>
+      <h4>⬇︎薬剤師からの回答⬇︎</h4>
       <% if @comments %>
         <% @comments.each do |comment| %>
         <div class="comment">
@@ -77,6 +88,6 @@
       <% end %>
     </div>
 
-    </div>
-  </div>
 </div>
+
+
