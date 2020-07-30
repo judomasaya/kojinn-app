@@ -14,76 +14,77 @@
     <%# <%= link_to "1つ戻る",'Create', 'posts_path'なぜかトップに行っちゃう %>
   </div>
 <% end %>
-
-<div class="date">
-  <div class="posts1">
-    <div class="post">　　
-      <h2>❶症状</h2>　
-      <%= @post.name %>
+<div class=content>
+  <div class="result">
+    <div class="posts1">
+      <div class="post">　　
+        <h2>❶症状</h2>　
+        <%= @post.name %>
+      </div>
+      <div class="post">　　
+        <h2>❷性別</h2>　
+        <%= @post.sex %>
+      </div>
+      <div class="post">　　
+        <h2>❸年齢</h2>　
+        <%= @post.age %>歳
+      </div>
+      <div class="post">　　
+        <h2>❹発症時期</h2>　
+          <%= @post.onset %>
+      </div>
     </div>
-    <div class="post">　　
-      <h2>❷性別</h2>　
-      <%= @post.sex %>
+    <div class="posts2">
+      <div class="post">
+        <h2>❺アレルギー</h2>　
+        <%= @post.allergy %>
+      </div>
+      <div class="post">　　
+        <h2>❻喘息</h2>　
+        <%= @post.asthma%>
+      </div>
+      <div class="post">
+        <h2>❼画像</h2>　
+          <div class="image">
+      <div class="postImage" style="background-image:url(<%= @post.image %>);">
+      </div>
+      </div>
+      </div>
     </div>
-    <div class="post">　　
-      <h2>❸年齢</h2>　
-      <%= @post.age %>歳
-    </div>
-    <div class="post">　　
-      <h2>❹発症時期</h2>　
-        <%= @post.onset %>
-    </div>
-  </div>
-  <div class="posts2">
     <div class="post">
-      <h2>❺アレルギー</h2>　
-      <%= @post.allergy %>
+      <h2>❽現在服用しているお薬</h2>　
+            <%= simple_format @post.kusuri %>
     </div>
     <div class="post">　　
-      <h2>❻喘息</h2>　
-      <%= @post.asthma%>
+      <h2>❾具体的な症状の内容</h2>　
+      　　<%= simple_format @post.title %>
     </div>
-    <div class="post">
-      <h2>❼画像</h2>　
-        <div class="image">
-    <div class="postImage" style="background-image:url(<%= @post.image %>);">
-    </div>
-    </div>
-    </div>
-</div>
-  <div class="post">
-    <h2>❽現在服用しているお薬</h2>　
-          <%= simple_format @post.kusuri %>
   </div>
-  <div class="post">　　
-    <h2>❾具体的な症状の内容</h2>　
-    　　<%= simple_format @post.title %>
-  </div>
-  <div class="chat">
-    <h2>薬剤師とチャット</h2>
-      <div class="container">
-        <% if current_user %>
-          <%= form_with(model: [@post, @comment], local: true) do |form| %>
-            <%= form.text_area :text, placeholder: "コメントする", rows: "3" %>
-            <%= form.submit "SEND" %>
+    <div class="chat">
+      <h2>薬剤師とチャット</h2>
+        <div class="container">
+          <% if current_user %>
+            <%= form_with(model: [@post, @comment], local: true) do |form| %>
+              <%= form.text_area :text, placeholder: "コメントする", rows: "3" %>
+              <%= form.submit "SEND" %>
+            <% end %>
+          <% else %>
+            <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
           <% end %>
-        <% else %>
-          <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+        </div>
+      </div>
+    <div class="comments">
+      <h4>⬇︎薬剤師からの回答⬇︎</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+        <div class="comment">
+          <p>
+            <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+            <%= comment.text %>
+          </p>
+        </div>
         <% end %>
-      </div>
-    </div>
-  <div class="comments">
-    <h4>⬇︎薬剤師からの回答⬇︎</h4>
-    <% if @comments %>
-      <% @comments.each do |comment| %>
-      <div class="comment">
-        <p>
-          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-          <%= comment.text %>
-        </p>
-      </div>
       <% end %>
-    <% end %>
 </div>
 
 </div>

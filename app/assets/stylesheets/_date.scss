@@ -4,24 +4,37 @@
   // padding: 0 0 0 300px;
 }
 
-.post{
-  border: 10px solid;
-  width: 100%;
-  margin-top: 30px;
-  margin-right: 20px;
-  // padding: 150px;
-  h2{
-    padding: 0 60px;
-    color:white;
-    // background-color: black;
-    font-size: xx-large;
-    text-align: center;
-    font-size: -webkit-xxx-large;
 
+.date {
+
+  .post{
+    // border: 1px solid;
+    width: 100%;
+    margin-right: 20px;
+    margin-top: 100px;
+
+    // padding: 150px;
+    h2{
+      padding: 0 60px;
+      color:white;
+      // background-color: black;
+      font-size: xx-large;
+      text-align: center;
+      font-size: -webkit-xxx-large;
+      
+    }
   }
 }
 
 .posts2 {
+  display: flex;
+  // padding: 0 0 0 300px;
+}
+.posts3 {
+  display: flex;
+  // padding: 0 0 0 300px;
+}
+.posts4 {
   display: flex;
   // padding: 0 0 0 300px;
 }
@@ -36,8 +49,20 @@ body .form__age {
 input, textarea {
   font-size: 30px;
   text-align: center;
+  border: none;
+  // border-bottom: 4px solid;
+  border-radius: 10px;;
+  box-shadow: 10px 10px 8px rgba(0,0,0,.4);
   // height: 100px;
   // padding: 0 20px;
   // margin-left: 30px;
       // height: 122px;
+}
+
+.required {
+  color:#f33;
+  font-size: .5em;
+  padding: 0 0 3px 0;
+  background-color: #fee;
+  font-weight: bold;
 }

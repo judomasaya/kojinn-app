@@ -26,7 +26,18 @@
 }
 
 
-
+.content {
+  margin: 30px 0 0 240px;
+  .result {
+    // border: solid 1px;
+    .post {
+      background-color: salmon;
+      //  padding: 0px 0 0 100px;
+      margin: 60px 20px;
+      //  margin: auto;
+    }
+  }
+}
 
 
 
