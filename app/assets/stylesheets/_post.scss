@@ -34,7 +34,7 @@
 
 
 .postContent{
-  padding: 200px 0 200px 0;
+  padding: 200px 0 0 0;
   background-color: #424080;
   form input[type="submit"] {
     background-color:red;
@@ -64,7 +64,7 @@
     }
 }
 
-.content__right__bottom--userName--btn:hover {
+.content____bottom--userName--btn:hover {
   opacity: 0.4;
   box-shadow: 0 0 60px rgb(204, 204, 194);
 }
@@ -76,10 +76,28 @@
 
 
 
-.content__right__top {
-  display: flex;
+.content__bottom__top {
+  // display: flex;
 
 }
 .content__right__bottom--userName {
+  // display: flex;
+}
+.content__1__title{
+  display: flex;
+}
+.sex {
+  display: flex;
+}
+.age {
+  display: flex;
+}
+.created_at {
+  display: flex;
+  &__answer {
+    font-size: 15px;
+}
+}
+.content__3 {
   display: flex;
 }

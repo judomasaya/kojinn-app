@@ -1,24 +1,35 @@
 <div class="content">
-  <div class="content__left">
-    <div class="content__left--image">
-    </div>
-  </div>
-  <div class="content__right">
-    <div class="content__right__top">
-      <p>接客内容</p>
-      <%= link_to post.name, post_path(post.id), class: "content__right__top--title" %>
-    </div>
-    <div class="content__right__bottom">
-      お薬は「<%= post.nickname %>」をお勧めしました！
-      <div class="content__right__bottom--userName">
-        <p>投稿者</p>
-        <%= link_to post.user.nickname, user_path(post.user), class: "content__right__bottom--userName--btn" %>
-      </div>
-      <div class="content__right__bottom--date">
-        <%= post.created_at %>
+  <% @posts.each do |post| %>
+    <div class="content__1">
+      <div class="content__1__title">
+        <h2>症状</h2>
+        <%= link_to post.name, post_path(post.id), class: "content__1__title--answer" %>
       </div>
     </div>
-  </div>
+    <div class="content__2">
+      <div class="sex">
+        <h2>性別</h2>
+        <div class="sex__answer">
+          <%= post.sex %>
+        </div>
+      </div>
+      <div class="age">
+        <h2>年齢</h2>
+        <div class="age__answer">
+          <%= post.age %>歳
+        </div>
+      </div>
+      <div class="created_at">
+        <h2>投稿時間</h2>
+        <div class="created_at__answer">
+          <%= post.created_at %>
+        </div>
+      </div>
+    <div class="content__3">
+      <h2>投稿者</h2>
+      <%= link_to post.user.nickname, user_path(post.user), class: "content__3" %>
+    </div>
+  <% end %>
 </div>
 
 <%# 部分テンプレートのファイル名は必ずアンダーバー「_」から始まります。 %>
