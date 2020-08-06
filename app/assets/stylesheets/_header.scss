@@ -1,4 +1,6 @@
 /* ヘッダー */
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300&display=swap');
+
 header {
   padding: 30px;
   background-color:darkblue;
@@ -10,13 +12,14 @@ header {
     display: flex;
     .title {
       padding: 0 0 0 30px;
-  }
+    }
     nav {
       padding: 90px 0 0 180px;
   }
 }
 }
-
+.title h1 {
+  font-family: 'Rowdies', cursive;}
 .header-links {
   list-style: none;
 }
