@@ -32,12 +32,12 @@
 
 
 
-
+// 学びたい症状の横クリック
 .postContent{
   padding: 200px 0 0 0;
-  background-color: #424080;
+  background-color: #7086f1;
   form input[type="submit"] {
-    background-color:red;
+    background-color: #ff872f;
     border-radius: 20px;
     color: #fff;
     border: 0;
@@ -100,4 +100,12 @@
 }
 .content__3 {
   display: flex;
+  font-size: 20px;
+}
+a.content__1__title--answer {
+  font-size: 50px;
+}
+
+a.content__3 {
+  height: 50px;
 }

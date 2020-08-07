@@ -1,6 +1,6 @@
 .wrapper {
   height: 500px;
-  width: 100%;
+  // width: 100%;
 }
 
 
@@ -64,7 +64,7 @@
       height: 55px;
       width: 55px;
       border: solid 20px;
-      color: teal;
+      background-color: #ff872f;
     }
   }
   &__right{
@@ -73,7 +73,7 @@
       a {
         color: white;
         border-radius: 27px;
-        background-color: red;
+        background-color: #ff872f;
         padding: 20px 40px 20px 40px;
         box-shadow: 0 7px 0 #d1483e;
         cursor: grab;
@@ -100,7 +100,7 @@
         a {
           color: white;
           border-radius: 27px;
-          background-color: red;
+          background-color: #ff872f;
           padding: 10px 30px 10px 30px;
           box-shadow: 0 7px 0 #d1483e;
           cursor: grab;

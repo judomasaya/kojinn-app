@@ -1,9 +1,9 @@
 
-//クリックボタン
+//全体のクリックボタン
 a {
   color: white;
   border-radius: 27px;
-  background-color: red;
+  background-color: #ff872f;
   padding: 10px 10px;
   box-shadow: 0 7px 0 #d1483e;
   cursor: grab;
@@ -31,18 +31,19 @@ h2{
 }
 h3{
   color:white;
-  background-color:darkblue;
+  background-color: #ff872f;
   text-align: center;
   height: 60px;
   line-height: 60px;
   font-size: 30px;
 }
+// 薬剤師とチャットのところ
 h4{
   // padding: 150px 0 0 0;
   color:white;
-  background-color: black;
+  background-color: #ff872f;
   font-size: xx-large;
- margin-top: 300px;
+ margin-top: 100px;
 }
 h5 {
   text-align: center;
